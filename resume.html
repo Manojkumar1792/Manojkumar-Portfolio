@@ -1,356 +1,582 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Manojkumar SA - Resume | QA Lead · AI Tester · Agile Leader</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manojkumar SA â€” Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:15px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-body{font-family:"Inter",system-ui,sans-serif;background:#eef0f8;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 16px 60px;color:#111827}
-.print-bar{width:770px;max-width:100%;display:flex;justify-content:flex-end;gap:10px;margin-bottom:16px}
-.btn-pdf{background:linear-gradient(135deg,#4f46e5,#0ea5e9);color:#fff;border:none;border-radius:10px;padding:10px 24px;font-family:"Inter",sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(79,70,229,.35);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;gap:7px}
-.btn-pdf:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,70,229,.4)}
-.page{width:770px;max-width:100%;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.15);border-radius:4px;overflow:hidden}
-/* HEADER */
-.r-head{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 45%,#0369a1 100%);padding:36px 44px 30px;position:relative;overflow:hidden}
-.r-head::before{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;border:2px solid rgba(255,255,255,.07)}
-.r-head::after{content:"";position:absolute;right:60px;bottom:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.18),transparent)}
-.rh-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;position:relative;z-index:1}
-.rh-name{font-family:"Space Grotesk",sans-serif;font-size:2.5rem;font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1}
-.rh-name em{color:#93c5fd;font-style:normal;font-weight:400}
-.rh-title{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.7);margin-top:7px;letter-spacing:.1em;text-transform:uppercase}
-.rh-avail{display:flex;align-items:center;gap:8px;background:rgba(16,185,129,.18);border:1px solid rgba(16,185,129,.45);border-radius:100px;padding:6px 16px;flex-shrink:0;margin-top:4px;font-size:.71rem;font-weight:700;color:#6ee7b7;letter-spacing:.07em;text-transform:uppercase}
-.rh-avail-dot{width:7px;height:7px;border-radius:50%;background:#10b981;box-shadow:0 0 0 2px rgba(16,185,129,.4);animation:pulse 2s ease infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
-.rh-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:20px;position:relative;z-index:1}
-.rh-contact{display:flex;flex-wrap:wrap;gap:6px 20px}
-.rh-ci{display:flex;align-items:center;gap:6px;font-size:.76rem;color:rgba(255,255,255,.8)}
-.rh-ci a{color:#7dd3fc;text-decoration:none}
-.rh-ci a:hover{text-decoration:underline}
-.rh-badges{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
-.rh-badge{font-size:.67rem;font-weight:600;padding:4px 12px;border-radius:100px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.88);background:rgba(255,255,255,.1);letter-spacing:.04em}
-/* BODY LAYOUT */
-.r-body{display:grid;grid-template-columns:230px 1fr;align-items:start}
-/* SIDEBAR */
-.r-side{background:#f8f9ff;border-right:1px solid #e8eaf6;padding:28px 22px;display:flex;flex-direction:column;gap:24px}
-.ss{display:flex;flex-direction:column;gap:11px}
-.ss-head{font-family:"Space Grotesk",sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#4f46e5;padding-bottom:7px;border-bottom:2px solid #e0e7ff;display:flex;align-items:center;gap:8px}
-.ss-head::before{content:"";width:12px;height:2px;background:#4f46e5;border-radius:2px}
-.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.kpi-box{background:#fff;border:1px solid #e8eaf6;border-radius:10px;padding:10px 6px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.04)}
-.kpi-n{font-family:"Space Grotesk",sans-serif;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,#4f46e5,#0ea5e9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
-.kpi-l{font-size:.57rem;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
-.sk-item{margin-bottom:9px}
-.sk-lbl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
-.sk-lbl span:first-child{font-size:.73rem;font-weight:600;color:#1e1b4b}
-.sk-lbl span:last-child{font-size:.62rem;font-weight:700;color:#4f46e5}
-.sk-bar{height:4px;background:#e8eaf6;border-radius:100px;overflow:hidden}
-.sk-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#4f46e5,#0ea5e9)}
-.tags{display:flex;flex-wrap:wrap;gap:5px}
-.tag{font-size:.64rem;font-weight:600;padding:3px 9px;border-radius:6px;background:#eef2ff;border:1px solid #ddd6fe;color:#4338ca}
-.cert-row{display:flex;gap:9px;align-items:flex-start}
-.cert-dot{width:24px;height:24px;border-radius:7px;flex-shrink:0;background:linear-gradient(135deg,#4f46e5,#0ea5e9);display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:800;color:#fff;margin-top:1px;letter-spacing:-.01em}
-.cert-txt{font-size:.72rem;color:#374151;line-height:1.5}
-.cert-txt strong{display:block;font-weight:700;color:#1e1b4b;font-size:.73rem}
-.cert-txt small{font-size:.61rem;color:#9ca3af}
-.port-box{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:10px;padding:14px 16px}
-.port-lbl{font-size:.6rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
-.port-url{font-size:.72rem;font-weight:600;color:#93c5fd;text-decoration:none;line-height:1.5;display:block}
-.port-url:hover{color:#fff}
-/* MAIN */
-.r-main{padding:28px 34px;display:flex;flex-direction:column;gap:22px}
-.sec-h{font-family:"Space Grotesk",sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#4f46e5;display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.sec-h::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#ddd6fe,transparent)}
-.summary{background:linear-gradient(135deg,#eef2ff,#e0f2fe);border:1px solid #c7d2fe;border-left:3px solid #4f46e5;border-radius:0 10px 10px 0;padding:16px 20px;font-size:.82rem;color:#374151;line-height:1.9}
-.summary strong{color:#1e1b4b}
-.exp{display:flex;flex-direction:column;gap:18px}
-.exp-card{border:1px solid #e8eaf6;border-radius:10px;overflow:hidden;background:#fff}
-.exp-head{background:linear-gradient(90deg,#f5f3ff,#eff6ff);padding:12px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid #e8eaf6}
-.exp-title{font-size:.9rem;font-weight:700;color:#1e1b4b;line-height:1.3}
-.exp-co{font-size:.75rem;font-weight:600;color:#4f46e5;margin-top:2px}
-.exp-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
-.exp-period{font-size:.67rem;font-weight:600;padding:3px 10px;border-radius:100px;background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;white-space:nowrap}
-.exp-badge{font-size:.61rem;font-weight:700;padding:2px 8px;border-radius:100px;background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d}
-.exp-body{padding:14px 18px}
-/* KEY FIX: bullet alignment using CSS grid */
-.blist{list-style:none;display:flex;flex-direction:column;gap:6px;padding:0;margin:0}
-.blist li{display:grid;grid-template-columns:14px 1fr;column-gap:7px;font-size:.78rem;color:#374151;line-height:1.65}
-.b-arr{color:#4f46e5;font-size:.62rem;font-weight:800;padding-top:4px;line-height:1;text-align:center}
-.blist li strong{color:#1e1b4b}
-.exp-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:11px;padding-top:11px;border-top:1px dashed #e8eaf6}
-.exp-chip{font-size:.62rem;font-weight:600;padding:2px 8px;border-radius:5px;background:#f5f3ff;border:1px solid #ddd6fe;color:#6d28d9}
-.agents-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.agent-card{border:1px solid #e8eaf6;border-radius:9px;padding:11px 14px;background:#fafbff;position:relative;overflow:hidden}
-.agent-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#374151}
-.agent-name{font-size:.78rem;font-weight:700;color:#1e1b4b;margin-bottom:3px}
-.agent-desc{font-size:.67rem;color:#6b7280;line-height:1.55}
-/* ACHIEVEMENTS: grid icon + text alignment */
-.ach-grid{display:flex;flex-direction:column;gap:7px}
-.ach-row{display:grid;grid-template-columns:22px 1fr;column-gap:10px;align-items:start;padding:9px 14px;background:#fafbff;border:1px solid #e8eaf6;border-radius:8px;border-left:3px solid #374151}
-.ach-ico{font-size:.7rem;color:#374151;font-weight:800;padding-top:3px;text-align:center;line-height:1.65}
-.ach-txt{font-size:.78rem;color:#374151;line-height:1.65}
-.ach-txt strong{color:#1e1b4b}
-.exp-hl{margin-top:13px;padding-top:13px;border-top:1px solid #e8eaf6}
-.exp-hl-lbl{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b7280;margin-bottom:8px}
-@media print{body{background:#fff;padding:0}.print-bar{display:none!important}.page{box-shadow:none;border-radius:0;width:100%}.rh-avail-dot{animation:none!important}@page{size:A4;margin:0}}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PAGE / PRINT SETUP
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+@page {
+  size: A4 portrait;
+  margin: 12mm 14mm 12mm 14mm;
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 9.5pt;
+  color: #111;
+  line-height: 1;
+  background: #d8d8d8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px 60px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESUME PAGE SHELL
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.resume {
+  width: 210mm;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: 0 6px 40px rgba(0,0,0,.22);
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PRINT BUTTON (screen only)
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.print-bar {
+  width: 210mm;
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.btn-print {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 22px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: .02em;
+}
+.btn-print:hover { background: #333; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HEADER  (black bar)
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.rh {
+  background: #111;
+  padding: 11mm 14mm 9mm;
+  color: #fff;
+}
+.rh-name {
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1;
+  color: #fff;
+}
+.rh-title {
+  font-size: 8.5pt;
+  font-weight: 400;
+  color: #bbb;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.rh-divider {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 9px 0 8px;
+}
+.rh-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 0;
+  font-size: 8pt;
+  color: #aaa;
+}
+.rh-ci {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.rh-ci + .rh-ci::before {
+  content: '|';
+  margin: 0 9px;
+  color: #444;
+}
+.rh-ci a { color: #bbb; text-decoration: none; }
+.rh-avail {
+  display: inline-block;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 3px;
+  padding: 3px 10px;
+  font-size: 7.5pt;
+  color: #999;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-top: 7px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BODY
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.rb {
+  padding: 7mm 14mm 10mm;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SECTION
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.sec {
+  margin-bottom: 11px;
+}
+.sec-title {
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #111;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 3px;
+  margin-bottom: 7px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PROFILE SUMMARY
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.summary-text {
+  font-size: 9pt;
+  color: #222;
+  line-height: 1.7;
+}
+.summary-text strong { color: #000; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   KEY STATS BAR
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.stats-bar {
+  display: flex;
+  justify-content: space-between;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 7px 10px;
+}
+.stat-i { text-align: center; }
+.stat-n {
+  font-size: 12pt;
+  font-weight: 700;
+  color: #111;
+  line-height: 1;
+  display: block;
+}
+.stat-l {
+  font-size: 6.5pt;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-top: 2px;
+  display: block;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   JOB BLOCK
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.job {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+.job-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  border-left: 3px solid #111;
+  padding-left: 8px;
+  margin-bottom: 2px;
+}
+.job-co {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
+}
+.job-period {
+  font-size: 8pt;
+  font-weight: 600;
+  color: #555;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.job-role {
+  font-size: 9pt;
+  font-weight: 500;
+  font-style: italic;
+  color: #333;
+  padding-left: 11px;
+  margin-bottom: 2px;
+}
+.job-loc {
+  font-size: 7.5pt;
+  color: #777;
+  padding-left: 11px;
+  margin-bottom: 7px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BULLET LIST  (grid for perfect alignment)
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.blist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.blist li {
+  display: grid;
+  grid-template-columns: 11px 1fr;
+  column-gap: 5px;
+  font-size: 9pt;
+  color: #222;
+  line-height: 1.6;
+}
+.bm {
+  color: #111;
+  font-size: 7pt;
+  font-weight: 700;
+  padding-top: 3px;
+  line-height: 1;
+  text-align: center;
+}
+.blist li strong { color: #000; font-weight: 600; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ADDITIONAL HIGHLIGHTS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.hl {
+  margin-top: 8px;
+  padding: 6px 8px 6px 10px;
+  border-left: 2px solid #ccc;
+  background: #fafafa;
+}
+.hl-lbl {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SKILL CHIPS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 7px;
+}
+.chip {
+  font-size: 7.5pt;
+  font-weight: 500;
+  padding: 1px 6px;
+  border: 1px solid #bbb;
+  color: #444;
+  background: #f8f8f8;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TWO-COLUMN GRID (skills, certs/edu)
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 28px;
+}
+.col-lbl {
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   AI AGENTS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.agent-row {
+  display: grid;
+  grid-template-columns: 11px 1fr;
+  column-gap: 5px;
+  font-size: 9pt;
+  line-height: 1.6;
+  color: #222;
+  margin-bottom: 3px;
+}
+.a-name { font-weight: 600; color: #111; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CERTS / EDUCATION
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.ce-row {
+  display: grid;
+  grid-template-columns: 11px 1fr;
+  column-gap: 5px;
+  font-size: 9pt;
+  line-height: 1.55;
+  color: #222;
+  margin-bottom: 5px;
+}
+.ce-row strong { font-weight: 600; color: #111; display: block; }
+.ce-row small { font-size: 7.5pt; color: #666; display: block; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ACHIEVEMENTS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.ach-row {
+  display: grid;
+  grid-template-columns: 11px 1fr;
+  column-gap: 5px;
+  font-size: 9pt;
+  color: #222;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+.ach-row strong { color: #000; font-weight: 600; }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PRINT OVERRIDES
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+  .resume {
+    box-shadow: none;
+    width: 100%;
+  }
+  .print-bar { display: none !important; }
+  .rh-avail-dot { animation: none !important; }
+  .job { page-break-inside: avoid; }
+  .sec { page-break-inside: avoid; }
+}
+
 </style>
 </head>
 <body>
+
+<!-- PRINT BUTTON (hidden on print) -->
 <div class="print-bar">
-  <button class="btn-pdf" onclick="window.print()">&#11015;&nbsp; Save as PDF</button>
+  <button class="btn-print" onclick="window.print()">&#11015; &nbsp;Save as PDF</button>
 </div>
-<div class="page">
-<!-- HEADER -->
-<header class="r-head">
-  <div class="rh-top">
-    <div>
-      <div class="rh-name">Manoj<em>kumar SA</em></div>
-      <div class="rh-title">QA Lead &nbsp;&middot;&nbsp; Business Analyst / BSA &nbsp;&middot;&nbsp; Agile Lead &nbsp;&middot;&nbsp; AI Tester</div>
-    </div>
-    <div class="rh-avail"><span class="rh-avail-dot"></span>Open to Opportunities</div>
-  </div>
-  <div class="rh-bottom">
+
+<div class="resume">
+
+  <!-- â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <header class="rh">
+    <div class="rh-name">Manojkumar SA</div>
+    <div class="rh-title">QA Lead &nbsp;&middot;&nbsp; Business Analyst / BSA &nbsp;&middot;&nbsp; Agile Lead &nbsp;&middot;&nbsp; AI Tester</div>
+    <hr class="rh-divider">
     <div class="rh-contact">
       <span class="rh-ci">&#128222; <a href="tel:9698162889">9698162889</a></span>
       <span class="rh-ci">&#9993; <a href="mailto:mkmanojmsc@gmail.com">mkmanojmsc@gmail.com</a></span>
-      <span class="rh-ci">&#128205; Chennai, Tamil Nadu</span>
+      <span class="rh-ci">&#128205; Chennai, Tamil Nadu, India</span>
       <span class="rh-ci">&#128188; <a href="https://linkedin.com/in/manojkumar" target="_blank">linkedin.com/in/manojkumar</a></span>
-      <span class="rh-ci">&#127760; <a href="https://manojkumar1792.github.io/Manojkumar-Portfolio/" target="_blank">Portfolio &#8599;</a></span>
+      <span class="rh-ci">&#127760; <a href="https://manojkumar1792.github.io/Manojkumar-Portfolio/" target="_blank">manojkumar1792.github.io/Manojkumar-Portfolio</a></span>
     </div>
-    <div class="rh-badges">
-      <span class="rh-badge">11+ Yrs Banking QA</span>
-      <span class="rh-badge">CSM Certified</span>
-      <span class="rh-badge">TOSCA 7&#215;</span>
-      <span class="rh-badge">AI Agent Builder</span>
+    <div class="rh-avail">&#9679; &nbsp; Open to Opportunities &mdash; QA Lead &nbsp;&middot;&nbsp; QA Manager &nbsp;&middot;&nbsp; AI Tester</div>
+  </header>
+
+  <!-- â•â• BODY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <div class="rb">
+
+    <!-- PROFILE SUMMARY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="sec">
+      <div class="sec-title">Profile Summary</div>
+      <p class="summary-text">
+        QA Lead with <strong>11+ years in Banking &amp; Financial Services</strong>. Proven track record leading a
+        <strong>12-member Agile squad</strong> to deliver high-quality, customer-centric solutions. Expert in
+        requirements elicitation, stakeholder management, Agile delivery, UAT coordination, and payment rails
+        (ACH, RTP, P2P). Holder of <strong>7 Tricentis TOSCA certifications</strong> and <strong>CSM certified</strong>.
+        <strong>First in team</strong> to design and ship 5 production AI agents using VS Code Copilot &mdash;
+        transforming manual workflows at Fiserv. Targeting <strong>QA Lead, QA Manager</strong>, and
+        <strong>AI Tester</strong> roles.
+      </p>
     </div>
-  </div>
-</header>
-<div class="r-body">
-<!-- SIDEBAR -->
-<aside class="r-side">
-  <div class="ss">
-    <div class="ss-head">Key Stats</div>
-    <div class="kpi-grid">
-      <div class="kpi-box"><div class="kpi-n">11+</div><div class="kpi-l">Years QA</div></div>
-      <div class="kpi-box"><div class="kpi-n">7&#215;</div><div class="kpi-l">TOSCA Certs</div></div>
-      <div class="kpi-box"><div class="kpi-n">5</div><div class="kpi-l">AI Agents</div></div>
-      <div class="kpi-box"><div class="kpi-n">12</div><div class="kpi-l">Squad Size</div></div>
-      <div class="kpi-box"><div class="kpi-n">25%</div><div class="kpi-l">Cycle &#8595;</div></div>
-      <div class="kpi-box"><div class="kpi-n">3</div><div class="kpi-l">Major Rels.</div></div>
-    </div>
-  </div>
-  <div class="ss">
-    <div class="ss-head">Core Skills</div>
-    <div>
-      <div class="sk-item"><div class="sk-lbl"><span>QA Strategy &amp; Leadership</span><span>Expert</span></div><div class="sk-bar"><div class="sk-fill" style="width:97%"></div></div></div>
-      <div class="sk-item"><div class="sk-lbl"><span>Agile / Scrum / PI Planning</span><span>Expert</span></div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
-      <div class="sk-item"><div class="sk-lbl"><span>TOSCA Automation</span><span>Expert</span></div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
-      <div class="sk-item"><div class="sk-lbl"><span>UAT Coordination</span><span>Expert</span></div><div class="sk-bar"><div class="sk-fill" style="width:94%"></div></div></div>
-      <div class="sk-item"><div class="sk-lbl"><span>Requirements / BRD / FRD</span><span>Expert</span></div><div class="sk-bar"><div class="sk-fill" style="width:93%"></div></div></div>
-      <div class="sk-item"><div class="sk-lbl"><span>Payments (ACH / RTP / P2P)</span><span>Expert</span></div><div class="sk-bar"><div class="sk-fill" style="width:92%"></div></div></div>
-      <div class="sk-item"><div class="sk-lbl"><span>AI Agent Development</span><span>Advanced</span></div><div class="sk-bar"><div class="sk-fill" style="width:84%"></div></div></div>
-      <div class="sk-item"><div class="sk-lbl"><span>Playwright Automation</span><span>Advanced</span></div><div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div></div>
-    </div>
-  </div>
-  <div class="ss">
-    <div class="ss-head">Tools &amp; Tech</div>
-    <div class="tags">
-      <span class="tag">TOSCA</span><span class="tag">Jira</span><span class="tag">Confluence</span>
-      <span class="tag">VersionOne</span><span class="tag">SQL</span><span class="tag">Playwright</span>
-      <span class="tag">NeoLoad</span><span class="tag">HP Quality Centre</span><span class="tag">Azure DevOps</span>
-      <span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Visio</span>
-      <span class="tag">VS Code Copilot</span><span class="tag">GenAI / LLM</span>
-      <span class="tag">GitHub</span><span class="tag">MS Office</span>
-    </div>
-  </div>
-  <div class="ss">
-    <div class="ss-head">Certifications</div>
-    <div style="display:flex;flex-direction:column;gap:9px">
-      <div class="cert-row">
-        <div class="cert-dot">CSM</div>
-        <div class="cert-txt"><strong>Certified Scrum Master</strong><small>Scrum Alliance</small></div>
-      </div>
-      <div class="cert-row">
-        <div class="cert-dot" style="font-size:.46rem">TOSCA</div>
-        <div class="cert-txt"><strong>TOSCA &#8212; 7 Certifications</strong><small>AS1, AS2, AE1, TDS1, TDS2, TQM, TA1 &#183; Tricentis</small></div>
-      </div>
-      <div class="cert-row">
-        <div class="cert-dot" style="font-size:.5rem">NEO</div>
-        <div class="cert-txt"><strong>NeoLoad Performance Testing</strong><small>Neotys Certified</small></div>
-      </div>
-      <div class="cert-row">
-        <div class="cert-dot" style="font-size:.5rem;background:linear-gradient(135deg,#f59e0b,#f43f5e)">AI</div>
-        <div class="cert-txt"><strong>AI Agent Development</strong><small>VS Code Copilot &#183; Applied AI in QA</small></div>
+
+    <!-- KEY STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="sec">
+      <div class="sec-title">Key Stats</div>
+      <div class="stats-bar">
+        <div class="stat-i"><span class="stat-n">11+</span><span class="stat-l">Years QA</span></div>
+        <div class="stat-i"><span class="stat-n">7&times;</span><span class="stat-l">TOSCA Certs</span></div>
+        <div class="stat-i"><span class="stat-n">5</span><span class="stat-l">AI Agents</span></div>
+        <div class="stat-i"><span class="stat-n">12</span><span class="stat-l">Squad Size</span></div>
+        <div class="stat-i"><span class="stat-n">25%</span><span class="stat-l">Cycle &darr;</span></div>
+        <div class="stat-i"><span class="stat-n">3</span><span class="stat-l">Major Releases</span></div>
+        <div class="stat-i"><span class="stat-n">100%</span><span class="stat-l">Traceability</span></div>
       </div>
     </div>
-  </div>
-  <div class="ss">
-    <div class="ss-head">Education</div>
-    <div class="cert-row">
-      <div class="cert-dot" style="font-size:.48rem;background:linear-gradient(135deg,#10b981,#0ea5e9)">MSc</div>
-      <div class="cert-txt">
-        <strong>M.Sc. Software Engineering</strong>
-        <small>KCET, Virudhunagar &#8212; 2014</small>
-        <small style="display:block;margin-top:2px;color:#6b7280">Specialisation: Software Quality &amp; Engineering</small>
-      </div>
-    </div>
-  </div>
-  <div class="port-box">
-    <div class="port-lbl">Live Portfolio</div>
-    <a class="port-url" href="https://manojkumar1792.github.io/Manojkumar-Portfolio/" target="_blank">manojkumar1792.github.io/<br>Manojkumar-Portfolio</a>
-  </div>
-</aside>
-<!-- MAIN -->
-<main class="r-main">
-  <section>
-    <div class="sec-h">Profile Summary</div>
-    <div class="summary">
-      QA Lead with <strong>11+ years in Banking &amp; Financial Services</strong>. Proven track record leading a
-      <strong>12-member Agile squad</strong> to deliver high-quality, customer-centric solutions.
-      Expert in <strong>requirements elicitation, stakeholder management, Agile delivery, UAT coordination</strong>,
-      and payment rails (ACH, RTP, P2P). Holder of <strong>7 Tricentis TOSCA certifications</strong> and CSM certified.
-      <strong>First in team</strong> to design and ship 5 production AI agents using VS Code Copilot &#8212;
-      transforming manual workflows at Fiserv. Targeting <strong>QA Lead, QA Manager</strong>, and <strong>AI Tester</strong> roles.
-    </div>
-  </section>
-  <section>
-    <div class="sec-h">Work Experience</div>
-    <div class="exp">
-      <div class="exp-card">
-        <div class="exp-head">
-          <div>
-            <div class="exp-title">QA Lead / Business Analyst / BSA / Agile Lead</div>
-            <div class="exp-co">Fiserv &nbsp;&#183;&nbsp; Chennai, Tamil Nadu</div>
-          </div>
-          <div class="exp-right">
-            <span class="exp-period">Feb 2020 &#8211; Present</span>
-            <span class="exp-badge">Current &nbsp;&#183;&nbsp; 5+ yrs</span>
-          </div>
+
+    <!-- WORK EXPERIENCE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="sec">
+      <div class="sec-title">Work Experience</div>
+
+      <!-- FISERV -->
+      <div class="job">
+        <div class="job-hd">
+          <span class="job-co">Fiserv</span>
+          <span class="job-period">Feb 2020 &ndash; Present &nbsp;&middot;&nbsp; 5+ yrs (Current)</span>
         </div>
-        <div class="exp-body">
+        <div class="job-role">QA Lead / Business Analyst / BSA / Agile Lead</div>
+        <div class="job-loc">Chennai, Tamil Nadu &nbsp;&middot;&nbsp; Banking &amp; FinTech &nbsp;&middot;&nbsp; Payments</div>
+        <ul class="blist">
+          <li><span class="bm">&#9658;</span><span><strong>Agile squad leadership:</strong> Directed a 12-member Agile squad to deliver end-to-end onboarding and payment solutions across multiple critical production releases.</span></li>
+          <li><span class="bm">&#9658;</span><span><strong>AI-driven onboarding:</strong> Designed intelligent onboarding agents using Generative AI workflows, directly improving process efficiency and user experience.</span></li>
+          <li><span class="bm">&#9658;</span><span><strong>QA automation partnership:</strong> Partnered with QA automation teams using Tricentis TOSCA to scale regression coverage and reduce testing execution effort.</span></li>
+          <li><span class="bm">&#9658;</span><span><strong>UAT leadership:</strong> Directed full lifecycle UAT coordination, defect triage, issue tracking, and release validation to secure critical business sign-offs.</span></li>
+          <li><span class="bm">&#9658;</span><span><strong>Cross-functional collaboration:</strong> Collaborated with business and technology stakeholders to validate requirements, define acceptance criteria, and ensure complete test readiness.</span></li>
+        </ul>
+        <div class="hl">
+          <div class="hl-lbl">Additional Highlights</div>
           <ul class="blist">
-            <li><span class="b-arr">&#9658;</span><span><strong>Agile squad leadership:</strong> Directed a 12-member Agile squad to deliver end-to-end onboarding and payment solutions across multiple critical production releases</span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>AI-driven onboarding:</strong> Designed intelligent onboarding agents using Generative AI workflows, directly improving process efficiency and user experience</span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>QA automation partnership:</strong> Partnered with QA automation teams using Tricentis TOSCA to scale regression coverage and reduce testing execution effort</span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>UAT leadership:</strong> Directed full lifecycle UAT coordination, defect triage, issue tracking, and release validation to secure critical business sign-offs</span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>Cross-functional collaboration:</strong> Collaborated with business and technology stakeholders to validate requirements, define acceptance criteria, and ensure complete test readiness</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Long-term tenure:</strong> Over 5 years of consistent contributions, demonstrating reliability, domain expertise, and strong organisational commitment.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Team leadership:</strong> Mentored junior QA engineers, delegated tasks effectively, and fostered a culture of accountability and continuous improvement.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Process optimisation:</strong> Championed automation adoption and streamlined defect management workflows, reducing cycle time by <strong>25%</strong>.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Client engagement:</strong> Actively engaged with clients during requirement workshops and release demos, strengthening trust and transparency.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Strategic impact:</strong> Contributed to enterprise-level initiatives that enhanced onboarding success rates and improved payment system stability.</span></li>
           </ul>
-          <div class="exp-hl">
-            <div class="exp-hl-lbl">Additional Highlights</div>
-            <ul class="blist">
-              <li><span class="b-arr">&#9658;</span><span><strong>Long-term tenure:</strong> Over 5 years of consistent contributions, demonstrating reliability, domain expertise, and strong organisational commitment</span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Team leadership:</strong> Mentored junior QA engineers, delegated tasks effectively, and fostered a culture of accountability and continuous improvement</span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Process optimisation:</strong> Championed automation adoption and streamlined defect management workflows, reducing cycle time by <strong>25%</strong></span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Client engagement:</strong> Actively engaged with clients during requirement workshops and release demos, strengthening trust and transparency</span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Strategic impact:</strong> Contributed to enterprise-level initiatives that enhanced onboarding success rates and improved payment system stability</span></li>
-            </ul>
-          </div>
-          <div class="exp-chips">
-            <span class="exp-chip">TOSCA</span><span class="exp-chip">Agile / Scrum</span>
-            <span class="exp-chip">Jira</span><span class="exp-chip">ACH / RTP / P2P</span>
-            <span class="exp-chip">UAT</span><span class="exp-chip">BRD / FRD</span>
-            <span class="exp-chip">GenAI / LLM</span><span class="exp-chip">NSSPAR / PAR</span>
-            <span class="exp-chip">PI Planning</span><span class="exp-chip">Playwright</span>
-          </div>
+        </div>
+        <div class="chips">
+          <span class="chip">TOSCA</span><span class="chip">Agile / Scrum</span><span class="chip">Jira</span>
+          <span class="chip">ACH / RTP / P2P</span><span class="chip">UAT</span><span class="chip">BRD / FRD</span>
+          <span class="chip">GenAI / LLM</span><span class="chip">NSSPAR / PAR</span>
+          <span class="chip">PI Planning</span><span class="chip">Playwright</span>
         </div>
       </div>
-      <div class="exp-card">
-        <div class="exp-head">
-          <div>
-            <div class="exp-title">Software Test Analyst I &amp; II</div>
-            <div class="exp-co">FIS Global &nbsp;&#183;&nbsp; Chennai, Tamil Nadu</div>
-          </div>
-          <div class="exp-right">
-            <span class="exp-period">Jul 2015 &#8211; Feb 2020</span>
-            <span class="exp-badge">4.5 yrs</span>
-          </div>
+
+      <!-- FIS GLOBAL -->
+      <div class="job">
+        <div class="job-hd">
+          <span class="job-co">FIS Global</span>
+          <span class="job-period">Jul 2015 &ndash; Feb 2020 &nbsp;&middot;&nbsp; 4.5 yrs</span>
         </div>
-        <div class="exp-body">
+        <div class="job-role">Software Test Analyst I &amp; II</div>
+        <div class="job-loc">Chennai, Tamil Nadu &nbsp;&middot;&nbsp; Banking &amp; Financial Services (BFS)</div>
+        <ul class="blist">
+          <li><span class="bm">&#9658;</span><span><strong>Functional validation:</strong> Performed functional validation for payment systems and digital banking applications across multiple Banking and Financial Services (BFS) projects.</span></li>
+          <li><span class="bm">&#9658;</span><span><strong>Complex test scenarios:</strong> Designed and executed complex test scenarios and test cases covering end-to-end functional, integration, and regression testing.</span></li>
+          <li><span class="bm">&#9658;</span><span><strong>Defect management:</strong> Managed full lifecycle defects using Jira and HP Quality Centre, conducting deep root cause analysis and verifying fixes for production readiness.</span></li>
+          <li><span class="bm">&#9658;</span><span><strong>Requirement traceability:</strong> Maintained <strong>100% requirement traceability</strong> by creating detailed process documentation, validation artifacts, and comprehensive test coverage reports.</span></li>
+        </ul>
+        <div class="hl">
+          <div class="hl-lbl">Additional Highlights</div>
           <ul class="blist">
-            <li><span class="b-arr">&#9658;</span><span><strong>Functional validation:</strong> Performed functional validation for payment systems and digital banking applications across multiple Banking and Financial Services (BFS) projects</span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>Complex test scenarios:</strong> Designed and executed complex test scenarios and test cases covering end-to-end functional, integration, and regression testing</span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>Defect management:</strong> Managed full lifecycle defects using Jira and HP Quality Centre, conducting deep root cause analysis and verifying fixes for production readiness</span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>Requirement traceability:</strong> Maintained <strong>100% requirement traceability</strong> by creating detailed process documentation, validation artifacts, and comprehensive test coverage reports</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Domain expertise:</strong> Gained deep BFS domain knowledge by validating complex payment workflows, compliance rules, and digital banking features.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Process improvement:</strong> Streamlined regression testing cycles, reducing execution time by <strong>20%</strong> through optimised test case design.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Team collaboration:</strong> Coordinated with developers, BAs, and product owners to ensure defect resolution and smooth release readiness.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Client delivery:</strong> Supported multiple client go-lives by ensuring zero defect delivery and strong production stability.</span></li>
+            <li><span class="bm">&#9658;</span><span><strong>Leadership contribution:</strong> Acted as senior QA lead, mentoring junior testers and driving knowledge-sharing sessions across teams.</span></li>
           </ul>
-          <div class="exp-hl">
-            <div class="exp-hl-lbl">Additional Highlights</div>
-            <ul class="blist">
-              <li><span class="b-arr">&#9658;</span><span><strong>Domain expertise:</strong> Gained deep BFS domain knowledge by validating complex payment workflows, compliance rules, and digital banking features</span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Process improvement:</strong> Streamlined regression testing cycles, reducing execution time by <strong>20%</strong> through optimised test case design</span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Team collaboration:</strong> Coordinated with developers, BAs, and product owners to ensure defect resolution and smooth release readiness</span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Client delivery:</strong> Supported multiple client go-lives by ensuring zero defect delivery and strong production stability</span></li>
-              <li><span class="b-arr">&#9658;</span><span><strong>Leadership contribution:</strong> Acted as senior QA lead, mentoring junior testers and driving knowledge-sharing sessions across teams</span></li>
-            </ul>
-          </div>
-          <div class="exp-chips">
-            <span class="exp-chip">SQL</span><span class="exp-chip">Jira</span>
-            <span class="exp-chip">HP Quality Centre</span><span class="exp-chip">Data Navigator</span>
-            <span class="exp-chip">Digital Banking</span><span class="exp-chip">BFS Domain</span>
-            <span class="exp-chip">Regression Testing</span><span class="exp-chip">BPMN</span>
+        </div>
+        <div class="chips">
+          <span class="chip">SQL</span><span class="chip">Jira</span>
+          <span class="chip">HP Quality Centre</span><span class="chip">Data Navigator</span>
+          <span class="chip">Digital Banking</span><span class="chip">BFS Domain</span>
+          <span class="chip">Regression Testing</span><span class="chip">BPMN</span>
+        </div>
+      </div>
+
+    </div><!-- /experience -->
+
+    <!-- CORE SKILLS & TOOLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="sec">
+      <div class="sec-title">Core Skills &amp; Tools</div>
+      <div class="two-col">
+        <div>
+          <div class="col-lbl">Skills</div>
+          <ul class="blist">
+            <li><span class="bm">&#9658;</span><span>QA Strategy &amp; Leadership</span></li>
+            <li><span class="bm">&#9658;</span><span>Agile / Scrum / PI Planning &mdash; CSM Certified</span></li>
+            <li><span class="bm">&#9658;</span><span>TOSCA Automation &mdash; AS1 through TQM, 7 Certs</span></li>
+            <li><span class="bm">&#9658;</span><span>UAT Planning &amp; Coordination</span></li>
+            <li><span class="bm">&#9658;</span><span>Requirements Elicitation &mdash; BRD / FRD / User Stories</span></li>
+            <li><span class="bm">&#9658;</span><span>Payments QA &mdash; ACH, RTP, P2P</span></li>
+            <li><span class="bm">&#9658;</span><span>AI Agent Development (VS Code Copilot)</span></li>
+            <li><span class="bm">&#9658;</span><span>Playwright Automation &amp; CI/CD Quality Gates</span></li>
+          </ul>
+        </div>
+        <div>
+          <div class="col-lbl">Tools &amp; Technologies</div>
+          <div class="chips" style="margin-top:0">
+            <span class="chip">TOSCA</span><span class="chip">Playwright</span>
+            <span class="chip">Jira</span><span class="chip">Confluence</span>
+            <span class="chip">VersionOne</span><span class="chip">SQL</span>
+            <span class="chip">NeoLoad</span><span class="chip">HP Quality Centre</span>
+            <span class="chip">Azure DevOps</span><span class="chip">Tableau</span>
+            <span class="chip">Power BI</span><span class="chip">Visio</span>
+            <span class="chip">VS Code Copilot</span><span class="chip">GenAI / LLM</span>
+            <span class="chip">GitHub</span><span class="chip">MS Office</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <section>
-    <div class="sec-h">AI Agents Built &nbsp;&#183;&nbsp; VS Code Copilot &nbsp;&#183;&nbsp; 5 Production Agents</div>
-    <div class="agents-grid">
-      <div class="agent-card">
-        <div class="agent-name">Skip Level Meeting Agent</div>
-        <div class="agent-desc">Attends &amp; auto-structures skip-level management discussions &#8212; saves hours of manual note-taking weekly at Fiserv</div>
-      </div>
-      <div class="agent-card">
-        <div class="agent-name">Leader Board Agent</div>
-        <div class="agent-desc">AI-driven initiative tracking for team performance, Agile training adoption, and talent recognition events</div>
-      </div>
-      <div class="agent-card">
-        <div class="agent-name">User Onboarding Agent</div>
-        <div class="agent-desc">Guides users through Fiserv PAR banking product setup, compliance workflows, and product selection</div>
-      </div>
-      <div class="agent-card">
-        <div class="agent-name">Frontend Scaffold Agent</div>
-        <div class="agent-desc">Reads backend APIs and auto-generates complete React + TypeScript applications with full CRUD UI</div>
-      </div>
-      <div class="agent-card" style="grid-column:1/-1">
-        <div class="agent-name">NSSPAR Playwright Agent</div>
-        <div class="agent-desc">Enterprise Playwright framework replacing TOSCA for NSSPAR &#8212; smoke, regression &amp; cross-browser CI/CD gates with Azure DevOps integration and AI-driven flaky-test quarantine logic</div>
+
+    <!-- AI AGENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="sec">
+      <div class="sec-title">AI Agents Built &nbsp;&middot;&nbsp; VS Code Copilot &nbsp;&middot;&nbsp; 5 Production Agents</div>
+      <div class="agent-row"><span class="bm">&#9658;</span><span><span class="a-name">Skip Level Meeting Agent</span> &mdash; Attends &amp; auto-structures skip-level management discussions; saves hours of manual note-taking weekly at Fiserv.</span></div>
+      <div class="agent-row"><span class="bm">&#9658;</span><span><span class="a-name">Leader Board Agent</span> &mdash; AI-driven initiative tracking for team performance, Agile training adoption, and talent recognition events.</span></div>
+      <div class="agent-row"><span class="bm">&#9658;</span><span><span class="a-name">User Onboarding Agent</span> &mdash; Guides users through Fiserv PAR banking product setup, compliance workflows, and product selection.</span></div>
+      <div class="agent-row"><span class="bm">&#9658;</span><span><span class="a-name">Frontend Scaffold Agent</span> &mdash; Reads backend APIs and auto-generates complete React + TypeScript applications with full CRUD UI.</span></div>
+      <div class="agent-row"><span class="bm">&#9658;</span><span><span class="a-name">NSSPAR Playwright Agent</span> &mdash; Enterprise Playwright framework replacing TOSCA for NSSPAR; smoke, regression &amp; cross-browser CI/CD gates with Azure DevOps integration and AI-driven flaky-test quarantine.</span></div>
+    </div>
+
+    <!-- CERTIFICATIONS & EDUCATION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="sec">
+      <div class="sec-title">Certifications &amp; Education</div>
+      <div class="two-col">
+        <div>
+          <div class="col-lbl">Certifications</div>
+          <div class="ce-row"><span class="bm">&#9658;</span><div><strong>Certified Scrum Master (CSM)</strong><small>Scrum Alliance</small></div></div>
+          <div class="ce-row"><span class="bm">&#9658;</span><div><strong>TOSCA &mdash; 7 Certifications</strong><small>AS1, AS2, AE1, TDS1, TDS2, TQM, TA1 &nbsp;&middot;&nbsp; Tricentis</small></div></div>
+          <div class="ce-row"><span class="bm">&#9658;</span><div><strong>NeoLoad Performance Testing</strong><small>Neotys Certified</small></div></div>
+          <div class="ce-row"><span class="bm">&#9658;</span><div><strong>AI Agent Development</strong><small>VS Code Copilot &nbsp;&middot;&nbsp; Applied AI in QA</small></div></div>
+        </div>
+        <div>
+          <div class="col-lbl">Education</div>
+          <div class="ce-row"><span class="bm">&#9658;</span><div><strong>M.Sc. Software Engineering</strong><small>KCET, Virudhunagar &mdash; 2014</small><small>Specialisation: Software Quality &amp; Engineering Practices</small></div></div>
+        </div>
       </div>
     </div>
-  </section>
-  <section>
-    <div class="sec-h">Key Achievements</div>
-    <div class="ach-grid">
-      <div class="ach-row">
-        <span class="ach-ico">&#9733;</span>
-        <span class="ach-txt">Recognised for <strong>consistent performance and Agile leadership</strong> across critical banking platform releases at Fiserv</span>
-      </div>
-      <div class="ach-row">
-        <span class="ach-ico">&#9733;</span>
-        <span class="ach-txt">Awarded for <strong>excellence in stakeholder collaboration</strong> and cross-functional process improvement initiatives</span>
-      </div>
-      <div class="ach-row">
-        <span class="ach-ico">&#9733;</span>
-        <span class="ach-txt"><strong>First in team</strong> to design and ship production AI agents using VS Code Copilot &#8212; adopted as a Fiserv team workflow standard</span>
-      </div>
-      <div class="ach-row">
-        <span class="ach-ico">&#9733;</span>
-        <span class="ach-txt">Delivered <strong>3 major banking platform releases</strong> on time with zero critical production defects as Agile Lead</span>
-      </div>
-      <div class="ach-row">
-        <span class="ach-ico">&#9733;</span>
-        <span class="ach-txt">Expanded TOSCA regression suite across all 7 certification levels &#8212; achieved <strong>40% reduction</strong> in manual testing effort</span>
-      </div>
-      <div class="ach-row">
-        <span class="ach-ico">&#9733;</span>
-        <span class="ach-txt">Led <strong>cross-functional squads</strong> delivering banking &amp; payment capabilities with consistently high stakeholder satisfaction</span>
-      </div>
+
+    <!-- KEY ACHIEVEMENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+    <div class="sec">
+      <div class="sec-title">Key Achievements</div>
+      <div class="ach-row"><span class="bm">&#9658;</span><span>Recognised for <strong>consistent performance and Agile leadership</strong> across critical banking platform releases at Fiserv.</span></div>
+      <div class="ach-row"><span class="bm">&#9658;</span><span>Awarded for <strong>excellence in stakeholder collaboration</strong> and cross-functional process improvement initiatives.</span></div>
+      <div class="ach-row"><span class="bm">&#9658;</span><span><strong>First in team</strong> to design and ship production AI agents using VS Code Copilot &mdash; adopted as a standard Fiserv team workflow tool.</span></div>
+      <div class="ach-row"><span class="bm">&#9658;</span><span>Delivered <strong>3 major banking platform releases</strong> on time with zero critical production defects as Agile Lead.</span></div>
+      <div class="ach-row"><span class="bm">&#9658;</span><span>Expanded TOSCA regression suite across all 7 certification levels &mdash; achieved <strong>40% reduction</strong> in manual testing effort.</span></div>
+      <div class="ach-row"><span class="bm">&#9658;</span><span>Led <strong>cross-functional squads</strong> delivering banking &amp; payment capabilities with consistently high stakeholder satisfaction.</span></div>
     </div>
-  </section>
-</main>
-</div>
-</div>
+
+  </div><!-- /rb -->
+</div><!-- /resume -->
+
 </body>
 </html>
