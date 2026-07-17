@@ -1,194 +1,197 @@
-﻿/* ═══════════════════════════════════════════════════
-   Manojkumar SA Portfolio — script.js
-═══════════════════════════════════════════════════ */
+﻿/* ============================================================
+   MANOJKUMAR SA — Aurora Portfolio Scripts
+============================================================ */
 
-// ── Nav scroll ──────────────────────────────────────
+// ── Nav scroll ──────────────────────────────────────────────
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
-
-// ── Mobile menu ─────────────────────────────────────
-const burger   = document.getElementById('burger');
-const navLinks = document.getElementById('navLinks');
-burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// ── Typed text ──────────────────────────────────────
-const phrases = [
-  'QA Lead | 11+ Years Experience',
-  'Agile Lead | CSM Certified',
-  'AI Agent Builder | VS Code',
+// ── Burger ──────────────────────────────────────────────────
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  burger.classList.toggle('active');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => { navLinks.classList.remove('open'); burger.classList.remove('active'); });
+});
+document.addEventListener('click', e => {
+  if (!nav.contains(e.target)) { navLinks.classList.remove('open'); burger.classList.remove('active'); }
+});
+
+// ── Typed text ──────────────────────────────────────────────
+const typedPhrases = [
+  'QA Lead | 11+ Years',
+  'Agile Lead | CSM',
+  'AI Agent Builder',
   'Banking & FinTech QA Expert',
-  'TOSCA Expert | 7 Certifications',
-  'QA Manager | AI Tester',
+  'TOSCA Expert | 7 Certs',
+  'QA Manager | AI Tester'
 ];
-let pi = 0, ci = 0, del = false;
 const typedEl = document.getElementById('typedText');
+let tIdx = 0, tChar = 0, tDel = false;
+function doType() {
+  const cur = typedPhrases[tIdx];
+  if (!tDel) {
+    typedEl.textContent = cur.slice(0, ++tChar);
+    if (tChar === cur.length) { tDel = true; setTimeout(doType, 2000); return; }
+    setTimeout(doType, 60);
+  } else {
+    typedEl.textContent = cur.slice(0, --tChar);
+    if (tChar === 0) { tDel = false; tIdx = (tIdx + 1) % typedPhrases.length; setTimeout(doType, 300); return; }
+    setTimeout(doType, 35);
+  }
+}
+doType();
 
-(function loop() {
-  const cur = phrases[pi];
-  typedEl.textContent = del ? cur.slice(0, --ci) : cur.slice(0, ++ci);
-  let t = del ? 55 : 95;
-  if (!del && ci === cur.length)   { t = 2000; del = true; }
-  if ( del && ci === 0)            { del = false; pi = (pi+1) % phrases.length; t = 350; }
-  setTimeout(loop, t);
-})();
-
-// ── Particle canvas ─────────────────────────────────
-(function initParticles() {
-  const canvas = document.getElementById('particlesCanvas');
-  if (!canvas) return;
+// ── Particle Canvas ─────────────────────────────────────────
+const canvas = document.getElementById('heroCanvas');
+if (canvas) {
   const ctx = canvas.getContext('2d');
-  let W, H, pts;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
+  let W, H, pts = [];
+  function resizeCanvas() {
+    W = canvas.width = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
   }
-  resize();
-  window.addEventListener('resize', resize, { passive: true });
-
-  function mkPt() {
-    return {
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - .5) * .4,
-      vy: (Math.random() - .5) * .4,
-      r: Math.random() * 1.5 + .5,
-    };
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  for (let i = 0; i < 80; i++) {
+    pts.push({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4,
+      r: Math.random() * 2 + 1
+    });
   }
-
-  pts = Array.from({ length: 80 }, mkPt);
-
-  function draw() {
+  function drawCanvas() {
     ctx.clearRect(0, 0, W, H);
     pts.forEach(p => {
       p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W;
-      if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H;
-      if (p.y > H) p.y = 0;
-
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0,212,170,.35)';
+      ctx.fillStyle = 'rgba(139,92,246,.35)';
       ctx.fill();
-
-      pts.forEach(q => {
-        const dx = p.x - q.x, dy = p.y - q.y;
-        const d  = Math.sqrt(dx*dx + dy*dy);
-        if (d < 120) {
+    });
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 130) {
           ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(0,212,170,${.18 * (1 - d/120)})`;
-          ctx.lineWidth = .6;
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = `rgba(139,92,246,${.18 * (1 - d / 130)})`;
+          ctx.lineWidth = .7;
           ctx.stroke();
         }
-      });
-    });
-    requestAnimationFrame(draw);
+      }
+    }
+    requestAnimationFrame(drawCanvas);
   }
-  draw();
-})();
-
-// ── Skill bars on scroll ────────────────────────────
-const barFills = document.querySelectorAll('.skfill');
-function animateBars() {
-  barFills.forEach(f => {
-    const r = f.getBoundingClientRect();
-    if (r.top < window.innerHeight - 40) f.style.width = f.dataset.w + '%';
-  });
+  drawCanvas();
 }
-window.addEventListener('scroll', animateBars, { passive: true });
-animateBars();
 
-// ── Scroll reveal ────────────────────────────────────
-const ro = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
-}, { threshold: .1 });
+// ── Scroll Reveal ───────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); }
+  });
+}, { threshold: .12 });
+revealEls.forEach(el => revObs.observe(el));
 
-document.querySelectorAll(
-  '.about-left, .about-right, .sk-card, .tools-col, .table-wrap, ' +
-  '.tl-card, .proj-card, .ai-card, .edu-card, .cert-card, .ach-item, .test-card, .ci, .looking-for'
-).forEach(el => { el.classList.add('reveal'); ro.observe(el); });
-
-// ── Testimonials slider ─────────────────────────────
-(function slider() {
-  const track  = document.getElementById('testTrack');
-  const dotsWr = document.getElementById('tcDots');
-  const prev   = document.getElementById('tPrev');
-  const next   = document.getElementById('tNext');
-  const cards  = track.querySelectorAll('.test-card');
-  let cur      = 0;
-  const vis    = window.innerWidth > 768 ? 2 : 1;
-  const total  = Math.ceil(cards.length / vis);
-
-  for (let i = 0; i < total; i++) {
-    const d = document.createElement('button');
-    d.className = 'tc-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Slide ' + (i+1));
-    d.onclick = () => go(i);
-    dotsWr.appendChild(d);
-  }
-
-  function go(i) {
-    cur = (i + total) % total;
-    const w = cards[0].offsetWidth + 24;
-    track.style.transform = `translateX(-${cur * w * vis}px)`;
-    dotsWr.querySelectorAll('.tc-dot').forEach((d,j) => d.classList.toggle('active', j === cur));
-  }
-
-  prev.onclick = () => go(cur - 1);
-  next.onclick = () => go(cur + 1);
-
-  let auto = setInterval(() => go(cur + 1), 5000);
-  track.parentElement.addEventListener('mouseenter', () => clearInterval(auto));
-  track.parentElement.addEventListener('mouseleave', () => { auto = setInterval(() => go(cur + 1), 5000); });
-})();
-
-// ── Contact form ─────────────────────────────────────
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const fields = [
-    { el: document.getElementById('cfName'),  err: document.getElementById('errName'),  label: 'Name' },
-    { el: document.getElementById('cfEmail'), err: document.getElementById('errEmail'), label: 'Email', email: true },
-    { el: document.getElementById('cfRole'),  err: document.getElementById('errRole'),  label: 'Role' },
-    { el: document.getElementById('cfMsg'),   err: document.getElementById('errMsg'),   label: 'Message' },
-  ];
-
-  let ok = true;
-  fields.forEach(f => {
-    f.el.classList.remove('invalid');
-    f.err.textContent = '';
-    if (!f.el.value.trim()) { f.err.textContent = f.label + ' is required.'; f.el.classList.add('invalid'); ok = false; return; }
-    if (f.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.el.value)) {
-      f.err.textContent = 'Enter a valid email.'; f.el.classList.add('invalid'); ok = false;
+// ── Skill Bars ──────────────────────────────────────────────
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.sbar-fill').forEach(b => {
+        b.style.width = b.dataset.w + '%';
+      });
+      barObs.unobserve(e.target);
     }
   });
+}, { threshold: .2 });
+document.querySelectorAll('.sk-block').forEach(b => barObs.observe(b));
 
-  if (!ok) return;
+// ── Testimonials Slider ─────────────────────────────────────
+const slider = document.getElementById('tslider');
+const dotsWrap = document.getElementById('tdots');
+const prev = document.getElementById('tPrev');
+const next = document.getElementById('tNext');
+if (slider) {
+  const cards = slider.querySelectorAll('.tcard');
+  let curr = 0;
+  const total = Math.ceil(cards.length / 2);
 
-  const txt  = document.getElementById('cfBtnTxt');
-  const load = document.getElementById('cfBtnLoad');
-  const suc  = document.getElementById('cfSuccess');
-  txt.hidden = true; load.hidden = false;
+  // Build dots
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('button');
+    d.className = 'tdot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  }
 
-  setTimeout(() => {
-    load.hidden = true; txt.hidden = false; suc.hidden = false;
-    this.reset();
-    setTimeout(() => suc.hidden = true, 7000);
-  }, 1400);
-});
+  function goTo(n) {
+    curr = (n + total) % total;
+    const cardW = cards[0].offsetWidth + 20;
+    slider.style.transform = `translateX(-${curr * (cardW * 2 + 20)}px)`;
+    dotsWrap.querySelectorAll('.tdot').forEach((d, i) => d.classList.toggle('active', i === curr));
+  }
 
-// ── Active nav highlight ─────────────────────────────
-const secs = document.querySelectorAll('section[id]');
-const anchors = document.querySelectorAll('.nav-links a[href^="#"]');
-window.addEventListener('scroll', () => {
-  let cur = '';
-  secs.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
-  anchors.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--teal)' : ''; });
-}, { passive: true });
+  prev.addEventListener('click', () => goTo(curr - 1));
+  next.addEventListener('click', () => goTo(curr + 1));
+
+  // Auto advance
+  let autoTimer = setInterval(() => goTo(curr + 1), 5000);
+  [prev, next].forEach(b => {
+    b.addEventListener('click', () => { clearInterval(autoTimer); autoTimer = setInterval(() => goTo(curr + 1), 5000); });
+  });
+
+  window.addEventListener('resize', () => goTo(curr));
+}
+
+// ── Contact Form ─────────────────────────────────────────────
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true;
+
+    function validate(id, errId, check, msg) {
+      const el = document.getElementById(id);
+      const err = document.getElementById(errId);
+      if (!check(el.value.trim())) {
+        el.classList.add('invalid'); err.textContent = msg; ok = false;
+      } else {
+        el.classList.remove('invalid'); err.textContent = '';
+      }
+    }
+
+    validate('cfName', 'errName', v => v.length >= 2, 'Please enter your name');
+    validate('cfEmail', 'errEmail', v => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v), 'Enter a valid email');
+    validate('cfRole', 'errRole', v => v.length >= 3, 'Please describe the role');
+    validate('cfMsg', 'errMsg', v => v.length >= 10, 'Message must be at least 10 characters');
+
+    if (!ok) return;
+
+    document.getElementById('cfTxt').hidden = true;
+    document.getElementById('cfLd').hidden = false;
+
+    setTimeout(() => {
+      document.getElementById('cfTxt').hidden = false;
+      document.getElementById('cfLd').hidden = true;
+      document.getElementById('cfOk').hidden = false;
+      form.reset();
+    }, 1200);
+  });
+
+  form.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('input', () => {
+      if (el.classList.contains('invalid')) { el.classList.remove('invalid'); }
+    });
+  });
+}
