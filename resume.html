@@ -84,15 +84,17 @@ body{font-family:"Inter",system-ui,sans-serif;background:#eef0f8;min-height:100v
 .exp-chip{font-size:.62rem;font-weight:600;padding:2px 8px;border-radius:5px;background:#f5f3ff;border:1px solid #ddd6fe;color:#6d28d9}
 .agents-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .agent-card{border:1px solid #e8eaf6;border-radius:9px;padding:11px 14px;background:#fafbff;position:relative;overflow:hidden}
-.agent-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--ac,#4f46e5)}
+.agent-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#374151}
 .agent-name{font-size:.78rem;font-weight:700;color:#1e1b4b;margin-bottom:3px}
 .agent-desc{font-size:.67rem;color:#6b7280;line-height:1.55}
 /* ACHIEVEMENTS: grid icon + text alignment */
 .ach-grid{display:flex;flex-direction:column;gap:7px}
-.ach-row{display:grid;grid-template-columns:22px 1fr;column-gap:10px;align-items:start;padding:9px 14px;background:#fafbff;border:1px solid #eef0f8;border-radius:8px;border-left:3px solid var(--ac,#4f46e5)}
-.ach-ico{font-size:.7rem;color:var(--ac,#4f46e5);font-weight:800;padding-top:3px;text-align:center;line-height:1.65}
+.ach-row{display:grid;grid-template-columns:22px 1fr;column-gap:10px;align-items:start;padding:9px 14px;background:#fafbff;border:1px solid #e8eaf6;border-radius:8px;border-left:3px solid #374151}
+.ach-ico{font-size:.7rem;color:#374151;font-weight:800;padding-top:3px;text-align:center;line-height:1.65}
 .ach-txt{font-size:.78rem;color:#374151;line-height:1.65}
 .ach-txt strong{color:#1e1b4b}
+.exp-hl{margin-top:13px;padding-top:13px;border-top:1px solid #e8eaf6}
+.exp-hl-lbl{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b7280;margin-bottom:8px}
 @media print{body{background:#fff;padding:0}.print-bar{display:none!important}.page{box-shadow:none;border-radius:0;width:100%}.rh-avail-dot{animation:none!important}@page{size:A4;margin:0}}
 </style>
 </head>
@@ -230,14 +232,22 @@ body{font-family:"Inter",system-ui,sans-serif;background:#eef0f8;min-height:100v
         </div>
         <div class="exp-body">
           <ul class="blist">
-            <li><span class="b-arr">&#9658;</span><span>Led a <strong>12-member Agile squad</strong>; facilitated stand-ups, sprint planning, reviews, and retrospectives across critical product deliveries</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Translated stakeholder needs into <strong>BRD / FRD, user stories, and acceptance criteria</strong>; owned full backlog refinement and roadmap management</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Coordinated <strong>UAT across business and technology teams</strong>, driving defect triage, traceability, and release sign-offs for every production deployment</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Delivered features across <strong>onboarding (PAR &amp; NSSPAR)</strong> and payments flows &#8212; ACH, RTP, P2P &#8212; with full quality and compliance coverage</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Partnered with QA/Automation teams using <strong>Tricentis TOSCA</strong> to mature regression suites and reduce cycle time by <strong>25%</strong></span></li>
-            <li><span class="b-arr">&#9658;</span><span><strong>First in team</strong> to design and ship 5 production AI agents using VS Code Copilot &#8212; adopted as standard workflow tooling at Fiserv</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Mentored junior QA engineers on Agile practices, banking domain knowledge, and TOSCA automation techniques</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>Agile squad leadership:</strong> Directed a 12-member Agile squad to deliver end-to-end onboarding and payment solutions across multiple critical production releases</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>AI-driven onboarding:</strong> Designed intelligent onboarding agents using Generative AI workflows, directly improving process efficiency and user experience</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>QA automation partnership:</strong> Partnered with QA automation teams using Tricentis TOSCA to scale regression coverage and reduce testing execution effort</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>UAT leadership:</strong> Directed full lifecycle UAT coordination, defect triage, issue tracking, and release validation to secure critical business sign-offs</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>Cross-functional collaboration:</strong> Collaborated with business and technology stakeholders to validate requirements, define acceptance criteria, and ensure complete test readiness</span></li>
           </ul>
+          <div class="exp-hl">
+            <div class="exp-hl-lbl">Additional Highlights</div>
+            <ul class="blist">
+              <li><span class="b-arr">&#9658;</span><span><strong>Long-term tenure:</strong> Over 5 years of consistent contributions, demonstrating reliability, domain expertise, and strong organisational commitment</span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Team leadership:</strong> Mentored junior QA engineers, delegated tasks effectively, and fostered a culture of accountability and continuous improvement</span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Process optimisation:</strong> Championed automation adoption and streamlined defect management workflows, reducing cycle time by <strong>25%</strong></span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Client engagement:</strong> Actively engaged with clients during requirement workshops and release demos, strengthening trust and transparency</span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Strategic impact:</strong> Contributed to enterprise-level initiatives that enhanced onboarding success rates and improved payment system stability</span></li>
+            </ul>
+          </div>
           <div class="exp-chips">
             <span class="exp-chip">TOSCA</span><span class="exp-chip">Agile / Scrum</span>
             <span class="exp-chip">Jira</span><span class="exp-chip">ACH / RTP / P2P</span>
@@ -250,23 +260,31 @@ body{font-family:"Inter",system-ui,sans-serif;background:#eef0f8;min-height:100v
       <div class="exp-card">
         <div class="exp-head">
           <div>
-            <div class="exp-title">Senior Business Analyst / Functional Analyst / QA Test Analyst I &amp; II</div>
+            <div class="exp-title">Software Test Analyst I &amp; II</div>
             <div class="exp-co">FIS Global &nbsp;&#183;&nbsp; Chennai, Tamil Nadu</div>
           </div>
           <div class="exp-right">
             <span class="exp-period">Jul 2015 &#8211; Feb 2020</span>
-            <span class="exp-badge" style="background:#fef9c3;border-color:#fde047;color:#a16207">4.5 yrs</span>
+            <span class="exp-badge">4.5 yrs</span>
           </div>
         </div>
         <div class="exp-body">
           <ul class="blist">
-            <li><span class="b-arr">&#9658;</span><span>Owned <strong>functional analysis</strong> for payment systems (Data Navigator) and digital banking modules across multiple BFS domain projects</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Designed complex <strong>test scenarios and cases</strong>; performed end-to-end functional, integration, and regression testing from BRD / FRD requirements</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Managed <strong>full defect lifecycle</strong> via Jira and HP Quality Centre &#8212; root-cause analysis, fix verification, and closure tracking</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Authored detailed <strong>process flows and acceptance tests</strong> ensuring <strong>100% requirement traceability</strong> throughout project lifecycle</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Reduced regression cycles by <strong>20%</strong> through optimised test case design and structured data preparation strategy</span></li>
-            <li><span class="b-arr">&#9658;</span><span>Supported multiple <strong>high-visibility client go-lives</strong> with zero critical production escapes and strong stakeholder confidence</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>Functional validation:</strong> Performed functional validation for payment systems and digital banking applications across multiple Banking and Financial Services (BFS) projects</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>Complex test scenarios:</strong> Designed and executed complex test scenarios and test cases covering end-to-end functional, integration, and regression testing</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>Defect management:</strong> Managed full lifecycle defects using Jira and HP Quality Centre, conducting deep root cause analysis and verifying fixes for production readiness</span></li>
+            <li><span class="b-arr">&#9658;</span><span><strong>Requirement traceability:</strong> Maintained <strong>100% requirement traceability</strong> by creating detailed process documentation, validation artifacts, and comprehensive test coverage reports</span></li>
           </ul>
+          <div class="exp-hl">
+            <div class="exp-hl-lbl">Additional Highlights</div>
+            <ul class="blist">
+              <li><span class="b-arr">&#9658;</span><span><strong>Domain expertise:</strong> Gained deep BFS domain knowledge by validating complex payment workflows, compliance rules, and digital banking features</span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Process improvement:</strong> Streamlined regression testing cycles, reducing execution time by <strong>20%</strong> through optimised test case design</span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Team collaboration:</strong> Coordinated with developers, BAs, and product owners to ensure defect resolution and smooth release readiness</span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Client delivery:</strong> Supported multiple client go-lives by ensuring zero defect delivery and strong production stability</span></li>
+              <li><span class="b-arr">&#9658;</span><span><strong>Leadership contribution:</strong> Acted as senior QA lead, mentoring junior testers and driving knowledge-sharing sessions across teams</span></li>
+            </ul>
+          </div>
           <div class="exp-chips">
             <span class="exp-chip">SQL</span><span class="exp-chip">Jira</span>
             <span class="exp-chip">HP Quality Centre</span><span class="exp-chip">Data Navigator</span>
@@ -280,23 +298,23 @@ body{font-family:"Inter",system-ui,sans-serif;background:#eef0f8;min-height:100v
   <section>
     <div class="sec-h">AI Agents Built &nbsp;&#183;&nbsp; VS Code Copilot &nbsp;&#183;&nbsp; 5 Production Agents</div>
     <div class="agents-grid">
-      <div class="agent-card" style="--ac:#4f46e5">
+      <div class="agent-card">
         <div class="agent-name">Skip Level Meeting Agent</div>
         <div class="agent-desc">Attends &amp; auto-structures skip-level management discussions &#8212; saves hours of manual note-taking weekly at Fiserv</div>
       </div>
-      <div class="agent-card" style="--ac:#0ea5e9">
+      <div class="agent-card">
         <div class="agent-name">Leader Board Agent</div>
         <div class="agent-desc">AI-driven initiative tracking for team performance, Agile training adoption, and talent recognition events</div>
       </div>
-      <div class="agent-card" style="--ac:#f59e0b">
+      <div class="agent-card">
         <div class="agent-name">User Onboarding Agent</div>
         <div class="agent-desc">Guides users through Fiserv PAR banking product setup, compliance workflows, and product selection</div>
       </div>
-      <div class="agent-card" style="--ac:#10b981">
+      <div class="agent-card">
         <div class="agent-name">Frontend Scaffold Agent</div>
         <div class="agent-desc">Reads backend APIs and auto-generates complete React + TypeScript applications with full CRUD UI</div>
       </div>
-      <div class="agent-card" style="--ac:#f43f5e;grid-column:1/-1">
+      <div class="agent-card" style="grid-column:1/-1">
         <div class="agent-name">NSSPAR Playwright Agent</div>
         <div class="agent-desc">Enterprise Playwright framework replacing TOSCA for NSSPAR &#8212; smoke, regression &amp; cross-browser CI/CD gates with Azure DevOps integration and AI-driven flaky-test quarantine logic</div>
       </div>
@@ -305,27 +323,27 @@ body{font-family:"Inter",system-ui,sans-serif;background:#eef0f8;min-height:100v
   <section>
     <div class="sec-h">Key Achievements</div>
     <div class="ach-grid">
-      <div class="ach-row" style="--ac:#4f46e5">
+      <div class="ach-row">
         <span class="ach-ico">&#9733;</span>
         <span class="ach-txt">Recognised for <strong>consistent performance and Agile leadership</strong> across critical banking platform releases at Fiserv</span>
       </div>
-      <div class="ach-row" style="--ac:#0ea5e9">
+      <div class="ach-row">
         <span class="ach-ico">&#9733;</span>
         <span class="ach-txt">Awarded for <strong>excellence in stakeholder collaboration</strong> and cross-functional process improvement initiatives</span>
       </div>
-      <div class="ach-row" style="--ac:#f59e0b">
+      <div class="ach-row">
         <span class="ach-ico">&#9733;</span>
         <span class="ach-txt"><strong>First in team</strong> to design and ship production AI agents using VS Code Copilot &#8212; adopted as a Fiserv team workflow standard</span>
       </div>
-      <div class="ach-row" style="--ac:#10b981">
+      <div class="ach-row">
         <span class="ach-ico">&#9733;</span>
         <span class="ach-txt">Delivered <strong>3 major banking platform releases</strong> on time with zero critical production defects as Agile Lead</span>
       </div>
-      <div class="ach-row" style="--ac:#f43f5e">
+      <div class="ach-row">
         <span class="ach-ico">&#9733;</span>
         <span class="ach-txt">Expanded TOSCA regression suite across all 7 certification levels &#8212; achieved <strong>40% reduction</strong> in manual testing effort</span>
       </div>
-      <div class="ach-row" style="--ac:#8b5cf6">
+      <div class="ach-row">
         <span class="ach-ico">&#9733;</span>
         <span class="ach-txt">Led <strong>cross-functional squads</strong> delivering banking &amp; payment capabilities with consistently high stakeholder satisfaction</span>
       </div>
