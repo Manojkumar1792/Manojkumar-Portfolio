@@ -11,6 +11,10 @@
 </head>
 <body>
 
+<!-- Scroll progress & cursor -->
+<div id="scrollBar" class="scroll-bar"></div>
+<div id="cursorGlow" class="cursor-glow"></div>
+
 <!-- NAV: centered pill -->
 <nav id="nav">
   <div class="nav-pill">
@@ -111,10 +115,50 @@
   <a class="hero-scroll" href="#about"><span>scroll</span><div class="hs-line"></div></a>
 </section>
 
+<!-- WHY HIRE ME -->
+<section class="section s-alt" id="value">
+  <div class="container">
+    <div class="sec-label">/ 01 &nbsp; Value</div>
+    <h2 class="sec-h2">Why I'm the Right <span class="text-grad">Hire</span></h2>
+    <p class="sec-sub">Rare combination of deep QA expertise, AI innovation, and banking domain mastery</p>
+    <div class="vp-grid">
+
+      <div class="vp-card vc-indigo reveal">
+        <div class="vp-top"><span class="vp-ico">🏆</span><span class="vp-num">01</span></div>
+        <h3>QA Leadership</h3>
+        <p>Directing 12-member Agile squads to deliver zero-defect banking releases. Proven UAT coordination and stakeholder alignment across Fiserv's most critical payment products.</p>
+        <span class="vp-badge">11+ Years · Banking QA</span>
+      </div>
+
+      <div class="vp-card vc-cyan reveal">
+        <div class="vp-top"><span class="vp-ico">🤖</span><span class="vp-num">02</span></div>
+        <h3>AI Innovation</h3>
+        <p>First in team to ship production AI agents using VS Code Copilot. Building intelligent automation that replaces manual workflows — meeting agents, onboarding agents, Playwright agents.</p>
+        <span class="vp-badge">5 Agents · In Production</span>
+      </div>
+
+      <div class="vp-card vc-rose reveal">
+        <div class="vp-top"><span class="vp-ico">💳</span><span class="vp-num">03</span></div>
+        <h3>Banking Domain</h3>
+        <p>Deep expertise in ACH, RTP, P2P payment systems at Fiserv and FIS Global. Instant understanding of compliance rules, BFS regulations, and complex payment workflows — no ramp-up time.</p>
+        <span class="vp-badge">Fiserv · FIS Global</span>
+      </div>
+
+      <div class="vp-card vc-amber reveal">
+        <div class="vp-top"><span class="vp-ico">⚡</span><span class="vp-num">04</span></div>
+        <h3>Agile Mastery</h3>
+        <p>CSM-certified Scrum Master running PI planning, backlog grooming, and sprint ceremonies. Delivered 3 major banking platform releases on time with high stakeholder satisfaction.</p>
+        <span class="vp-badge">CSM · 3 Major Releases</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT BENTO -->
 <section class="section" id="about">
   <div class="container">
-    <div class="sec-label">/ 01 &nbsp; About</div>
+    <div class="sec-label">/ 02 &nbsp; About</div>
 
     <div class="bento">
       <!-- Bio card — 2×2 -->
@@ -166,7 +210,7 @@
 <!-- AI AGENTS -->
 <section class="section s-alt" id="ai-agents">
   <div class="container">
-    <div class="sec-label">/ 02 &nbsp; AI Agents</div>
+    <div class="sec-label">/ 03 &nbsp; AI Agents</div>
     <h2 class="sec-h2">AI Agents <span class="text-grad">I Built</span></h2>
     <p class="sec-sub">5 production agents built with VS Code Copilot · Running in real workflows at Fiserv</p>
 
@@ -269,7 +313,7 @@
 <!-- SKILLS -->
 <section class="section" id="skills">
   <div class="container">
-    <div class="sec-label">/ 03 &nbsp; Skills</div>
+    <div class="sec-label">/ 04 &nbsp; Skills</div>
     <h2 class="sec-h2">Technical <span class="text-grad">Mastery</span></h2>
   </div>
 
@@ -360,10 +404,76 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="sec-label">/ 05 &nbsp; Projects</div>
+    <h2 class="sec-h2">Notable <span class="text-grad">Work</span></h2>
+    <p class="sec-sub">Key deliveries across Fiserv, FIS Global and personal AI projects</p>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal" style="--ac:#6366f1">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">💳</span><div class="pc-tags"><span>Fiserv</span><span>Payments</span></div></div>
+        <h3>PAR &amp; NSSPAR Onboarding QA</h3>
+        <p>End-to-end QA ownership for Fiserv flagship onboarding. Defined test strategy, managed UAT, and secured compliance sign-off across ACH, RTP &amp; P2P payment rails.</p>
+        <div class="pc-chips"><span>TOSCA</span><span>UAT</span><span>ACH/RTP/P2P</span><span>Fiserv</span></div>
+        <div class="pc-impact" style="--ic:#6366f1">↓ 25% cycle time</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#06b6d4">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">🤖</span><div class="pc-tags"><span>AI</span><span>VS Code</span></div></div>
+        <h3>AI Agents Suite (5 Agents)</h3>
+        <p>Designed and shipped 5 production AI agents: Skip Level Meeting, Leader Board, User Onboarding, Frontend Scaffold, and NSSPAR Playwright automation agent.</p>
+        <div class="pc-chips"><span>VS Code Agents</span><span>LLM</span><span>Playwright</span><span>GenAI</span></div>
+        <div class="pc-impact" style="--ic:#06b6d4">5 agents live</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#a855f7">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">🗺</span><div class="pc-tags"><span>FIS Global</span><span>Banking</span></div></div>
+        <h3>Data Navigator QA Suite</h3>
+        <p>Full lifecycle QA for FIS Data Navigator. BRD-driven test cases, integration scenarios, Jira defect workflow with 100% requirement traceability maintained throughout.</p>
+        <div class="pc-chips"><span>SQL</span><span>Jira</span><span>HP QC</span><span>BRD</span></div>
+        <div class="pc-impact" style="--ic:#a855f7">100% traceability</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#f43f5e">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">👥</span><div class="pc-tags"><span>Agile</span><span>Leadership</span></div></div>
+        <h3>12-Member Agile Squad</h3>
+        <p>Led PI planning, sprint ceremonies, and backlog management for a 12-person squad at Fiserv delivering 3 major banking platform releases with zero critical defects in production.</p>
+        <div class="pc-chips"><span>Scrum</span><span>PI Planning</span><span>CSM</span><span>VersionOne</span></div>
+        <div class="pc-impact" style="--ic:#f43f5e">3 major releases</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#f59e0b">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">🔄</span><div class="pc-tags"><span>Automation</span><span>TOSCA</span></div></div>
+        <h3>TOSCA Regression Maturity</h3>
+        <p>Expanded TOSCA regression suite across 7 certification levels (AS1–TQM). Reduced manual regression effort by 40%, enabling continuous deployment confidence across Fiserv.</p>
+        <div class="pc-chips"><span>TOSCA</span><span>Regression</span><span>CI/CD</span><span>7 Certs</span></div>
+        <div class="pc-impact" style="--ic:#f59e0b">↓ 40% manual effort</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#10b981">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">📊</span><div class="pc-tags"><span>Analytics</span><span>Reporting</span></div></div>
+        <h3>QA Metrics Dashboard</h3>
+        <p>Tableau &amp; Power BI dashboards tracking defect density, pass rates, and UAT sign-off trends — real-time quality visibility enabling leadership to make data-driven decisions.</p>
+        <div class="pc-chips"><span>Tableau</span><span>Power BI</span><span>SQL</span></div>
+        <div class="pc-impact" style="--ic:#10b981">Real-time insights</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section class="section s-alt" id="experience">
   <div class="container">
-    <div class="sec-label">/ 04 &nbsp; Experience</div>
+    <div class="sec-label">/ 06 &nbsp; Experience</div>
     <h2 class="sec-h2">Career <span class="text-grad">Journey</span></h2>
 
     <div class="timeline">
@@ -448,10 +558,67 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="sec-label">/ 07 &nbsp; Testimonials</div>
+    <h2 class="sec-h2">What Colleagues <span class="text-grad">Say</span></h2>
+    <p class="sec-sub">Feedback from managers, peers, and team members across Fiserv &amp; FIS Global</p>
+
+    <div class="tslider-wrap">
+      <div class="tslider" id="tslider">
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"Manojkumar brings a rare combination of deep QA expertise and business acumen. His ability to translate complex payment requirements into airtight test scenarios is exceptional. An indispensable Agile lead who makes every release smoother."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#6366f1,#06b6d4)">PM</div>
+            <div><strong>Project Manager</strong><span>Fiserv, Chennai — Banking Products</span></div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"The way Manoj coordinates UAT across business and tech teams is remarkable. He ensures every stakeholder is aligned, defects are triaged fast, and releases go smoothly. Our go-to lead for critical payment deliveries."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#10b981,#06b6d4)">SM</div>
+            <div><strong>Scrum Master</strong><span>Fiserv — Payments Platform</span></div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"When Manoj introduced AI agents into our workflow, the Skip Level Meeting Agent alone saved hours of manual note-taking every week. He thinks ahead of the curve and delivers real business value that no one else on the team was even considering."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#a855f7,#f43f5e)">TL</div>
+            <div><strong>Tech Lead</strong><span>Banking Products Team — Fiserv</span></div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"Working under Manoj gave me the best Agile education I've ever had. He is patient, structured, and always pushes the team to think about quality from day one. An outstanding people leader who lifts everyone around him."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#f59e0b,#f43f5e)">QA</div>
+            <div><strong>QA Analyst</strong><span>FIS Global — BFS Domain</span></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="tctrl">
+        <button class="tcb" id="tPrev">←</button>
+        <div class="tdots" id="tdots"></div>
+        <button class="tcb" id="tNext">→</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- EDUCATION -->
 <section class="section" id="education">
   <div class="container">
-    <div class="sec-label">/ 05 &nbsp; Education</div>
+    <div class="sec-label">/ 08 &nbsp; Education</div>
     <h2 class="sec-h2">Qualifications &amp; <span class="text-grad">Certifications</span></h2>
 
     <div class="edu-layout">
@@ -486,7 +653,7 @@
 <!-- CONTACT -->
 <section class="section s-alt" id="contact">
   <div class="container">
-    <div class="sec-label">/ 06 &nbsp; Contact</div>
+    <div class="sec-label">/ 09 &nbsp; Contact</div>
     <h2 class="sec-h2">Let's <span class="text-grad">Connect</span></h2>
     <p class="sec-sub">Actively seeking <strong>QA Lead</strong>, <strong>QA Manager</strong>, and <strong>AI Tester</strong> roles. Open to full-time &amp; consulting.</p>
 
@@ -531,6 +698,8 @@
     </div>
   </div>
 </footer>
+
+<button id="backTop" class="back-top" aria-label="Back to top">↑</button>
 
 <script src="script.js"></script>
 </body>
