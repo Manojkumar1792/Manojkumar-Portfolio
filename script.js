@@ -182,3 +182,68 @@ if (form) {
     el.addEventListener('input', () => el.classList.remove('invalid'))
   );
 }
+
+// ── FAQ Chat Bot ──────────────────────────────────────
+const chatbot = document.getElementById('chatbot');
+if (chatbot) {
+  const toggle = document.getElementById('chatbotToggle');
+  const closeBtn = document.getElementById('chatbotClose');
+  const body = document.getElementById('chatbotBody');
+  const chipsWrap = document.getElementById('chatbotChips');
+  const chatForm = document.getElementById('chatbotForm');
+  const input = document.getElementById('chatbotInput');
+
+  const faq = {
+    skills: "QA Leadership, QA Strategy & Governance, AI Agent Engineering, and AI-Augmented Testing — backed by 7× Tricentis TOSCA certification, CSM Scrum certification, Playwright automation, and prompt engineering / GenAI workflows.",
+    agents: "5 production AI agents engineered and shipped into live enterprise workflows — including the NSSPAR Playwright Agent, which replaced Tricentis TOSCA for a key testing workflow.",
+    experience: "11+ years in Banking & FinTech QA at Fiserv, hands-on leading a 12-member Agile squad, owning QA strategy, UAT coordination, and release governance across 3 major banking releases.",
+    contact: "Best via the Contact form below, or email mkmanojmsc@gmail.com / connect on LinkedIn — both linked in the Contact section.",
+    certifications: "7× Tricentis TOSCA certified (AS1, AS2, AE1, TDS1, TDS2, TQM, TA1) and CSM certified Scrum practitioner.",
+    resume: "Role-specific resumes are linked at the bottom of the Contact section — QA Lead, QA Manager, AI Engineer, and AI Tester versions.",
+    education: "Details are in the Education section further down the page, alongside certifications and key achievements."
+  };
+
+  function addMsg(text, who) {
+    const div = document.createElement('div');
+    div.className = 'cb-msg ' + (who === 'user' ? 'cb-user' : 'cb-bot');
+    div.textContent = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function answerFor(raw) {
+    const q = raw.toLowerCase();
+    if (/skill/.test(q)) return faq.skills;
+    if (/agent|ai work|automat/.test(q)) return faq.agents;
+    if (/experience|year|fiserv|work history/.test(q)) return faq.experience;
+    if (/contact|email|reach|linkedin/.test(q)) return faq.contact;
+    if (/cert/.test(q)) return faq.certifications;
+    if (/resume|cv/.test(q)) return faq.resume;
+    if (/education|degree|study/.test(q)) return faq.education;
+    return "I'm just a simple FAQ bot — try asking about skills, AI agents, experience, certifications, or how to get in touch. You can also scroll down to explore the full portfolio.";
+  }
+
+  toggle.addEventListener('click', () => chatbot.classList.toggle('open'));
+  closeBtn.addEventListener('click', () => chatbot.classList.remove('open'));
+  document.addEventListener('click', e => {
+    if (!chatbot.contains(e.target)) chatbot.classList.remove('open');
+  });
+
+  chipsWrap.addEventListener('click', e => {
+    const chip = e.target.closest('.cb-chip');
+    if (!chip) return;
+    const key = chip.dataset.q;
+    addMsg(chip.textContent, 'user');
+    setTimeout(() => addMsg(faq[key] || answerFor(key), 'bot'), 300);
+  });
+
+  chatForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const val = input.value.trim();
+    if (!val) return;
+    addMsg(val, 'user');
+    input.value = '';
+    setTimeout(() => addMsg(answerFor(val), 'bot'), 300);
+  });
+}
+
