@@ -211,7 +211,7 @@
             </div>
           </div>
           <p>Attends skip-level meetings with senior management — captures full context, tracks action items, and auto-generates structured post-meeting summaries. No critical decision gets missed.</p>
-          <p style="margin-top:8px;"><a href="https://github.com/Manojkumar1792/meeting-notes-agent" target="_blank" rel="noopener" style="font-size:.8rem;font-weight:700;">View standalone demo on GitHub ↗</a></p>
+          <p style="margin-top:8px;"><a href="#code-showcase" style="font-size:.8rem;font-weight:700;">View code showcase ↓</a></p>
         </div>
         <div class="ac-metric">
           <div class="am-val">100%</div>
@@ -291,6 +291,55 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- CODE SHOWCASE -->
+    <div class="code-showcase" id="code-showcase">
+      <div class="cs-head">
+        <div>
+          <div class="ach-label" style="margin-bottom:6px;">Code Showcase</div>
+          <h3 class="bb-h" style="font-size:1.3rem;">A standalone, original demo — <em>Meeting Notes Agent</em></h3>
+        </div>
+        <div class="cs-badges">
+          <span class="hub-chip">TypeScript</span>
+          <span class="hub-chip">✓ Unit Tested</span>
+          <span class="hub-chip">Zero Runtime Deps</span>
+          <span class="hub-chip">CLI + API</span>
+        </div>
+      </div>
+      <p class="bb-body" style="margin-bottom:16px;">
+        Production AI agent code built for Fiserv is employer-owned and isn't mine to publish. This is an
+        independent, from-scratch reimplementation of the same general pattern — turning a raw transcript
+        into a structured summary, decisions log, and action items — with no employer code, data, or
+        business logic involved. The repository is kept <strong>private</strong>; the excerpt below shows
+        the core extraction logic, and the full project is available for review on request.
+      </p>
+      <div class="code-window">
+        <div class="cw-bar"><span></span><span></span><span></span><span class="cw-name">agent.ts</span></div>
+        <pre class="cw-body"><code>export async function extractMeetingNotes(transcript: string): Promise&lt;MeetingNotes&gt; {
+  if (process.env.OPENAI_API_KEY) {
+    try {
+      return await extractWithLLM(transcript);   // LLM-backed extraction (optional)
+    } catch {
+      // Fall through to heuristic mode if the API call fails for any reason.
+    }
+  }
+  return extractHeuristic(transcript);           // Deterministic, no API key required
+}
+
+function extractActionItems(lines: string[]): ActionItem[] {
+  const items: ActionItem[] = [];
+  for (const line of lines) {
+    // Case 1: line starts directly with ACTION/TODO/AI (no speaker prefix)
+    // Case 2: speaker-prefixed line, e.g. "Priya: ACTION: update by Friday."
+    // Case 3: loose pattern - "Name: will do X by Friday" (excludes
+    //          lines that are really decisions/risks in disguise)
+    ...
+  }
+  return items;
+}</code></pre>
+      </div>
+      <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
     </div>
   </div>
 </section>
