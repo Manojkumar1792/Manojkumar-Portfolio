@@ -129,12 +129,15 @@ nav.scrolled .nav-pill {
   padding: 8px 13px; border-radius: 100px; transition: var(--tr); display: block;
 }
 .nav-links a:hover { color: var(--text); background: rgba(99,102,241,.08); }
+.nav-resume-group { display: flex; gap: 6px; margin-left: 6px; }
 .nav-resume {
-  margin-left: 6px; padding: 8px 18px; border-radius: 100px;
+  padding: 8px 15px; border-radius: 100px;
   background: var(--grad); color: #fff;
-  font-weight: 700; font-size: .8rem; transition: var(--tr);
+  font-weight: 700; font-size: .76rem; white-space: nowrap; transition: var(--tr);
 }
 .nav-resume:hover { opacity: .88; color: #fff; }
+.nav-resume-group.quad { gap: 4px; }
+.nav-resume-group.quad .nav-resume { padding: 7px 11px; font-size: .68rem; }
 .burger {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer;
@@ -577,7 +580,7 @@ nav.scrolled .nav-pill {
   .nav-links { position: fixed; top: 0; right: -100%; width: 270px; height: 100vh; background: rgba(255,255,255,.98); border-left: 1px solid var(--border); flex-direction: column; padding: 80px 20px 24px; transition: right var(--tr); gap: 4px; box-shadow: -8px 0 40px rgba(99,102,241,.1); }
   .nav-links.open { right: 0; }
   .nav-links a { padding: 12px 16px !important; border-radius: var(--r); }
-  .nav-resume { display: none; }
+  .nav-resume-group { display: none; }
   .hero-layout { grid-template-columns: 1fr; }
   .bento { grid-template-columns: 1fr; }
   .bento-bio, .bento-stat, .bento-curr, .bento-open { grid-column: 1 !important; grid-row: auto !important; }
@@ -674,6 +677,79 @@ nav.scrolled .nav-pill {
 .vc-rose   .vp-badge { background: rgba(244,63,94,.1);   color: var(--rose);    border: 1px solid rgba(244,63,94,.2); }
 .vc-amber  .vp-badge { background: rgba(245,158,11,.1);  color: #d97706;        border: 1px solid rgba(245,158,11,.2); }
 
+/* ── Eligibility Matrix (grand all-roles page) ── */
+.elig-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px; margin-top: 52px;
+}
+.elig-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 28px 24px;
+  box-shadow: var(--shadow); transition: var(--tr);
+  display: flex; flex-direction: column; gap: 14px;
+}
+.elig-card:hover { transform: translateY(-7px); box-shadow: 0 16px 48px rgba(0,0,0,.1); border-color: var(--bh); }
+.elig-top { display: flex; align-items: center; gap: 10px; }
+.elig-ico { font-size: 1.8rem; }
+.elig-top h3 { font-size: 1.1rem; font-weight: 800; color: var(--text); }
+.elig-list { list-style: none; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.elig-list li {
+  font-size: .8rem; color: var(--text2); line-height: 1.6;
+  padding-left: 14px; position: relative;
+}
+.elig-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 800; }
+.elig-list strong { color: var(--text); font-weight: 700; }
+.elig-cta { display: flex; flex-direction: column; gap: 8px; }
+
+/* ── Grand portfolio banner (hub page) ── */
+.grand-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  background: var(--grad); border-radius: var(--r);
+  padding: 28px 32px; margin-top: 52px;
+  box-shadow: var(--shadow-h); transition: var(--tr);
+}
+.grand-banner:hover { transform: translateY(-4px); }
+.grand-badge {
+  display: inline-block; font-size: .72rem; font-weight: 800;
+  letter-spacing: .04em; color: #fff; background: rgba(255,255,255,.2);
+  padding: 4px 12px; border-radius: 100px; margin-bottom: 10px;
+}
+.grand-banner-text h3 { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+.grand-banner-text p { font-size: .88rem; color: rgba(255,255,255,.88); max-width: 540px; line-height: 1.6; }
+.grand-banner-cta {
+  flex-shrink: 0; font-size: .85rem; font-weight: 800; color: var(--primary);
+  background: #fff; padding: 13px 24px; border-radius: 100px; white-space: nowrap;
+  transition: var(--tr);
+}
+.grand-banner:hover .grand-banner-cta { transform: scale(1.04); }
+
+/* ── Role Picker (hub page) ── */
+.role-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px; margin-top: 52px;
+}
+.role-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 30px 24px;
+  box-shadow: var(--shadow); transition: var(--tr);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.role-card:hover { transform: translateY(-7px); box-shadow: 0 16px 48px rgba(0,0,0,.1); border-color: var(--bh); }
+.role-ico { font-size: 2.2rem; }
+.role-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--text); }
+.role-card p { font-size: .83rem; color: var(--text2); line-height: 1.7; flex: 1; }
+.role-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.role-btn {
+  text-align: center; font-size: .82rem; font-weight: 700;
+  padding: 10px 16px; border-radius: 100px; transition: var(--tr);
+  background: var(--grad); color: #fff;
+}
+.role-btn:hover { opacity: .88; color: #fff; }
+.role-btn.secondary {
+  background: transparent; color: var(--text2); border: 1.5px solid var(--border);
+}
+.role-btn.secondary:hover { border-color: var(--bh); color: var(--text); }
+
 /* ── Projects ── */
 .proj-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -768,10 +844,15 @@ nav.scrolled .nav-pill {
 @media (max-width: 1024px) {
   .vp-grid { grid-template-columns: 1fr 1fr; }
   .proj-grid { grid-template-columns: 1fr 1fr; }
+  .role-grid { grid-template-columns: 1fr 1fr; }
+  .elig-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .vp-grid { grid-template-columns: 1fr; }
   .proj-grid { grid-template-columns: 1fr; }
+  .role-grid { grid-template-columns: 1fr; }
+  .elig-grid { grid-template-columns: 1fr; }
+  .grand-banner { flex-direction: column; align-items: flex-start; text-align: left; }
   .tcard { min-width: 100%; }
   .back-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
 }
