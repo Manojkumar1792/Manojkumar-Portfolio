@@ -38,7 +38,7 @@ document.addEventListener('click', e => {
 const phrases = [
   'QA Lead · 11+ Years Experience',
   'Agile Lead · CSM Certified',
-  'AI Agent Builder · VS Code',
+  'AI Agent Engineer · 5 Production Systems',
   'Banking & FinTech QA Expert',
   'TOSCA Expert · 7 Certifications',
   'QA Manager · AI Tester'
