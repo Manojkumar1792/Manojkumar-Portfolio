@@ -292,6 +292,41 @@ nav.scrolled .nav-pill {
 @keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 @keyframes floatB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 
+/* Hub page only: portrait-led hero visual (replaces the floating card stack) */
+.hub-hero-visual { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.hub-photo-frame {
+  position: relative; width: 100%; max-width: 300px;
+  aspect-ratio: 3 / 4; border-radius: 26px; padding: 5px;
+  background: var(--grad); box-shadow: var(--shadow-h);
+  animation: floatA 7s ease-in-out infinite;
+}
+.hub-photo-frame::before {
+  content: ''; position: absolute; inset: -26px; z-index: -1;
+  background: var(--grad); filter: blur(44px); opacity: .4;
+  border-radius: 46px;
+}
+.hub-photo {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 22px; display: block; background: var(--bg2);
+}
+.hub-badge {
+  position: absolute; display: flex; flex-direction: column; align-items: center;
+  background: rgba(10,11,25,.82); border: 1px solid var(--border);
+  backdrop-filter: blur(14px); border-radius: 14px;
+  padding: 10px 16px; box-shadow: var(--shadow);
+}
+.hub-badge-a { bottom: -14px; left: -18px; }
+.hub-badge-b { top: -14px; right: -18px; }
+.hub-badge-n { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 800; line-height: 1; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hub-badge-n span { font-size: .9rem; }
+.hub-badge-l { font-size: .6rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; margin-top: 3px; white-space: nowrap; }
+.hub-chip-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.hub-chip {
+  font-size: .76rem; font-weight: 600; color: var(--text2);
+  background: var(--card2); border: 1px solid var(--border);
+  padding: 7px 15px; border-radius: 100px; backdrop-filter: blur(10px);
+}
+
 /* KPI strip */
 .hero-kpis {
   display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
