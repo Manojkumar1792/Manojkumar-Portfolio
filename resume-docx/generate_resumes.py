@@ -1,15 +1,25 @@
 # One-off generator for ATS-optimized Word resumes. Run with: python generate_resumes.py
 import os
 from docx import Document
-from docx.shared import Pt, Inches
+from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
+from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 OUT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-CONTACT = "9698162889  |  mkmanojmsc@gmail.com  |  Chennai, Tamil Nadu, India  |  linkedin.com/in/manojkumar  |  github.com/Manojkumar1792"
-PORTFOLIO = "Portfolio: manojkumar1792.github.io/Manojkumar-Portfolio"
+# Brand palette - matches the live portfolio's navy/gold theme
+NAVY = RGBColor(0x14, 0x1A, 0x2E)
+GOLD = RGBColor(0xA9, 0x84, 0x1F)
+GOLD_HEX = "A9841F"
+WHITE = RGBColor(0xFF, 0xFF, 0xFF)
+LIGHT_GOLD = RGBColor(0xE8, 0xD9, 0xA8)
+SLATE = RGBColor(0x3A, 0x3F, 0x4B)
+HEADER_FILL = "141A2E"
+
+PORTFOLIO_URL = "https://manojkumar1792.github.io/Manojkumar-Portfolio/"
+CONTACT = "9698162889   |   mkmanojmsc@gmail.com   |   Chennai, Tamil Nadu, India   |   linkedin.com/in/manoj-kumar-s-a-56a82492   |   github.com/Manojkumar1792"
 
 FIS_GLOBAL_BULLETS = [
     "Functional Validation: Performed functional validation for payment systems and digital banking applications across multiple BFS projects.",
@@ -267,19 +277,23 @@ def set_cell_free_doc(doc):
 
 def add_heading(doc, text):
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(10)
-    p.paragraph_format.space_after = Pt(3)
+    p.paragraph_format.space_before = Pt(14)
+    p.paragraph_format.space_after = Pt(4)
+    lead = p.add_run("\u25A0 ")
+    lead.bold = True
+    lead.font.size = Pt(10)
+    lead.font.color.rgb = GOLD
     run = p.add_run(text.upper())
     run.bold = True
-    run.font.size = Pt(11.5)
-    run.font.color.rgb = None
+    run.font.size = Pt(12)
+    run.font.color.rgb = NAVY
     pPr = p._p.get_or_add_pPr()
     pBdr = OxmlElement("w:pBdr")
     bottom = OxmlElement("w:bottom")
     bottom.set(qn("w:val"), "single")
-    bottom.set(qn("w:sz"), "6")
-    bottom.set(qn("w:space"), "1")
-    bottom.set(qn("w:color"), "000000")
+    bottom.set(qn("w:sz"), "10")
+    bottom.set(qn("w:space"), "2")
+    bottom.set(qn("w:color"), GOLD_HEX)
     pBdr.append(bottom)
     pPr.append(pBdr)
     return p
@@ -291,6 +305,7 @@ def add_bullet(doc, text, bold_lead=None):
     if bold_lead:
         r1 = p.add_run(bold_lead)
         r1.bold = True
+        r1.font.color.rgb = NAVY
         p.add_run(text)
     else:
         p.add_run(text)
@@ -308,33 +323,95 @@ def add_line_bullet_from_colon(doc, full_text):
         add_bullet(doc, full_text)
 
 
-def add_plain(doc, text, size=10, italic=False, bold=False, space_after=4):
+def add_plain(doc, text, size=10, italic=False, bold=False, space_after=4, color=None):
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(space_after)
     r = p.add_run(text)
     r.font.size = Pt(size)
     r.italic = italic
     r.bold = bold
+    if color:
+        r.font.color.rgb = color
     return p
+
+
+def shade_paragraph(paragraph, hex_fill):
+    pPr = paragraph._p.get_or_add_pPr()
+    shd = OxmlElement("w:shd")
+    shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:color"), "auto")
+    shd.set(qn("w:fill"), hex_fill)
+    pPr.append(shd)
+
+
+def add_hyperlink(paragraph, url, text, color_hex=GOLD_HEX, bold=True, size=11):
+    part = paragraph.part
+    r_id = part.relate_to(url, RT.HYPERLINK, is_external=True)
+    hyperlink = OxmlElement("w:hyperlink")
+    hyperlink.set(qn("r:id"), r_id)
+    new_run = OxmlElement("w:r")
+    rPr = OxmlElement("w:rPr")
+    rFonts = OxmlElement("w:rFonts")
+    rFonts.set(qn("w:ascii"), "Calibri")
+    rPr.append(rFonts)
+    sz = OxmlElement("w:sz")
+    sz.set(qn("w:val"), str(int(size * 2)))
+    rPr.append(sz)
+    if bold:
+        rPr.append(OxmlElement("w:b"))
+    u = OxmlElement("w:u")
+    u.set(qn("w:val"), "single")
+    rPr.append(u)
+    c = OxmlElement("w:color")
+    c.set(qn("w:val"), color_hex)
+    rPr.append(c)
+    new_run.append(rPr)
+    t = OxmlElement("w:t")
+    t.text = text
+    new_run.append(t)
+    hyperlink.append(new_run)
+    paragraph._p.append(hyperlink)
+    return hyperlink
 
 
 def build_resume(role_key, data):
     doc = Document()
     set_cell_free_doc(doc)
 
-    # Name
-    p = doc.add_paragraph()
-    p.paragraph_format.space_after = Pt(0)
-    r = p.add_run("Manojkumar SA")
+    # ---- NAVY HEADER BANNER with gold accents ----
+    p_name = doc.add_paragraph()
+    p_name.paragraph_format.space_before = Pt(10)
+    p_name.paragraph_format.space_after = Pt(2)
+    shade_paragraph(p_name, HEADER_FILL)
+    r = p_name.add_run("Manojkumar SA")
     r.bold = True
-    r.font.size = Pt(20)
+    r.font.size = Pt(24)
+    r.font.color.rgb = WHITE
 
-    # Title line
-    add_plain(doc, data["title"], size=10.5, space_after=2)
+    p_title = doc.add_paragraph()
+    p_title.paragraph_format.space_after = Pt(6)
+    shade_paragraph(p_title, HEADER_FILL)
+    rt = p_title.add_run(data["title"])
+    rt.bold = True
+    rt.font.size = Pt(11)
+    rt.font.color.rgb = LIGHT_GOLD
 
-    # Contact
-    add_plain(doc, CONTACT, size=9, space_after=0)
-    add_plain(doc, PORTFOLIO, size=9, space_after=6)
+    p_contact = doc.add_paragraph()
+    p_contact.paragraph_format.space_after = Pt(4)
+    shade_paragraph(p_contact, HEADER_FILL)
+    rc = p_contact.add_run(CONTACT)
+    rc.font.size = Pt(9)
+    rc.font.color.rgb = WHITE
+
+    p_port = doc.add_paragraph()
+    p_port.paragraph_format.space_before = Pt(2)
+    p_port.paragraph_format.space_after = Pt(10)
+    shade_paragraph(p_port, HEADER_FILL)
+    rp_lbl = p_port.add_run("\u2605 LIVE PORTFOLIO:  ")
+    rp_lbl.bold = True
+    rp_lbl.font.size = Pt(9.5)
+    rp_lbl.font.color.rgb = GOLD
+    add_hyperlink(p_port, PORTFOLIO_URL, PORTFOLIO_URL, color_hex="FFFFFF", bold=True, size=9.5)
 
     # Summary
     add_heading(doc, "Professional Summary")
@@ -348,14 +425,14 @@ def build_resume(role_key, data):
 
     # Experience - Fiserv
     add_heading(doc, "Professional Experience")
-    add_plain(doc, "Fiserv - " + data["fiserv_role"], bold=True, size=11, space_after=0)
+    add_plain(doc, "Fiserv - " + data["fiserv_role"], bold=True, size=11, space_after=0, color=NAVY)
     add_plain(doc, "Chennai, Tamil Nadu, India  |  Banking & FinTech - Payments & Onboarding  |  Feb 2020 - Present (5+ yrs, Current)", italic=True, size=9.5, space_after=3)
     for item in data["fiserv_bullets"]:
         add_line_bullet_from_colon(doc, item)
     add_plain(doc, "Tools: " + data["fiserv_tools"], size=9.5, italic=True, space_after=6)
 
     # Experience - FIS Global
-    add_plain(doc, "FIS Global - Software Test Analyst I & II", bold=True, size=11, space_after=0)
+    add_plain(doc, "FIS Global - Software Test Analyst I & II", bold=True, size=11, space_after=0, color=NAVY)
     add_plain(doc, "Chennai, Tamil Nadu, India  |  Banking & Financial Services (BFS)  |  Jul 2015 - Feb 2020 (4.5 yrs)", italic=True, size=9.5, space_after=3)
     for item in FIS_GLOBAL_BULLETS:
         add_line_bullet_from_colon(doc, item)
