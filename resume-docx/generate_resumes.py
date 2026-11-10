@@ -34,11 +34,14 @@ FIS_GLOBAL_BULLETS = [
 FIS_GLOBAL_TOOLS = "SQL, Jira, HP Quality Centre, Data Navigator, Digital Banking, BFS Domain, Regression Testing"
 
 AI_AGENTS = [
-    ("Skip Level Meeting Agent", "Attends and auto-structures skip-level management discussions; saves hours of note-taking weekly at Fiserv."),
-    ("Leader Board Agent", "AI-driven tracking for team performance, Agile training adoption, and talent recognition events."),
-    ("User Onboarding Agent", "Guides users through Fiserv PAR banking setup, compliance workflows, and product selection."),
-    ("Frontend Scaffold Agent", "Reads backend APIs and auto-generates complete React + TypeScript applications with full CRUD UI."),
+    ("Skip Level Agent", "AI assistant for skip-level conversations; captures feedback, detects risk signals, and structures insights for leadership."),
+    ("Release Checklist Agent", "Converts a single release-lock date into a fully-dated 21-step checklist, with automated email reminders for overdue items."),
+    ("AI Upliftment Program Hub", "Live leaderboard and dashboard tracking AI adoption, use cases, and training completions across teams."),
+    ("User Onboarding Agent", "Guides users through core banking product setup, compliance workflows, and product selection."),
+    ("Intelligent Frontend Scaffold Agent", "Reads a backend codebase or API contract and auto-generates a full React + TypeScript application."),
+    ("Intelligent Testing Agent", "Unified web agent to create, select, execute, and manage automated test runs with real-time reporting."),
     ("NSSPAR Playwright Agent", "Enterprise Playwright framework replacing TOSCA; smoke, regression, and cross-browser CI/CD gates with Azure DevOps integration."),
+    ("AgentVerse", "Serverless platform for a prompt-driven AI agent-building competition with live judged scoring and an auto-generated winners video."),
 ]
 
 CERTS_COMMON = [
@@ -59,15 +62,15 @@ ROLES = {
             "through daily sprint execution, test strategy, and release-day decision making. Deeply involved in "
             "requirements elicitation, test design, UAT coordination, and defect triage across payment rails "
             "(ACH, RTP, P2P). Holder of 7 Tricentis TOSCA certifications and CSM certified. First in team to "
-            "design and ship 5 production AI agents now running in live enterprise workflows. Targeting QA Lead "
+            "design and ship 8 production AI agents now running in live enterprise workflows. Targeting QA Lead "
             "and AI Tester roles where hands-on technical leadership drives quality."
         ),
         "ai_expertise": [
-            "AI Agent Development: Engineered 5 production AI agents covering meeting automation, user onboarding, team performance tracking, frontend scaffolding, and enterprise test automation (NSSPAR Playwright).",
+            "AI Agent Development: Engineered 8 production AI agents covering leadership intelligence, release management, program analytics, user onboarding, frontend scaffolding, and enterprise test automation (NSSPAR Playwright).",
             "Prompt Engineering: Skilled in crafting precise prompts for LLMs (GPT-4, Claude, Gemini) to generate test cases, BRD/FRD content, acceptance criteria, and automated QA workflows directly from requirements.",
             "AI-Assisted Test Automation: Leveraged AI-assisted code generation to accelerate Playwright script creation, intelligent defect analysis, and automated test data setup, reducing scripting time by over 40%.",
             "Generative AI in QA Leadership: Applied GenAI tools to sprint reporting, test coverage gap analysis, risk identification, and stakeholder communication, making QA processes faster and data-driven.",
-            "AI in Banking & FinTech: Applied AI to intelligent onboarding flows, anomaly detection concepts, and smart requirement validation in payment domain projects at Fiserv.",
+            "AI in Banking & FinTech: Applied AI to intelligent onboarding flows, anomaly detection concepts, and smart requirement validation in payment domain projects.",
         ],
         "ai_tools": "GitHub Copilot, ChatGPT/GPT-4, Claude, Gemini, Prompt Engineering, LLM/GenAI, AI Agent Orchestration, RAG Concepts, AI-Assisted Testing, Playwright + AI",
         "fiserv_role": "QA Lead / Agile Lead / AI Tester",
@@ -87,7 +90,7 @@ ROLES = {
         "achievements": [
             "Recognised for consistent performance and Agile leadership across critical banking platform releases at Fiserv.",
             "Awarded for excellence in stakeholder collaboration and cross-functional process improvement initiatives.",
-            "First in team to design and ship production AI agents, adopted as a standard Fiserv workflow tool.",
+            "First in team to design and ship 8 production AI agents, adopted as standard enterprise workflow tools.",
             "Delivered 3 major banking platform releases on time with zero critical production defects as Agile Lead.",
             "Expanded TOSCA regression suite across all 7 certification levels, achieving a 40% reduction in manual testing effort.",
             "Led cross-functional squads delivering banking and payment capabilities with consistently high stakeholder satisfaction.",
@@ -108,16 +111,16 @@ ROLES = {
             "QA Manager with 11+ years in Banking & Financial Services, owning QA strategy, process governance, "
             "and delivery outcomes for a 12-member Agile squad. Skilled in stakeholder management, risk-based test "
             "planning, resource allocation, Agile delivery, and UAT sign-off across payment rails (ACH, RTP, P2P). "
-            "Holder of 7 Tricentis TOSCA certifications and CSM certified. First in team to design and ship 5 "
+            "Holder of 7 Tricentis TOSCA certifications and CSM certified. First in team to design and ship 8 "
             "production AI agents now running in live enterprise workflows, driving data-driven quality management. "
             "Targeting QA Manager and senior QA leadership roles."
         ),
         "ai_expertise": [
-            "AI Agent Development: Engineered 5 production AI agents covering meeting automation, user onboarding, team performance tracking, frontend scaffolding, and enterprise test automation (NSSPAR Playwright).",
+            "AI Agent Development: Engineered 8 production AI agents covering leadership intelligence, release management, program analytics, user onboarding, frontend scaffolding, and enterprise test automation (NSSPAR Playwright).",
             "Prompt Engineering: Skilled in crafting precise prompts for LLMs (GPT-4, Claude, Gemini) to generate test cases, BRD/FRD content, acceptance criteria, and automated QA workflows directly from requirements.",
             "AI-Assisted Test Automation: Leveraged AI-assisted code generation to accelerate Playwright script creation, intelligent defect analysis, and automated test data setup, reducing scripting time by over 40%.",
             "Generative AI in QA Leadership: Applied GenAI tools to sprint reporting, test coverage gap analysis, risk identification, and stakeholder communication, making QA processes faster and data-driven.",
-            "AI in Banking & FinTech: Applied AI to intelligent onboarding flows, anomaly detection concepts, and smart requirement validation in payment domain projects at Fiserv.",
+            "AI in Banking & FinTech: Applied AI to intelligent onboarding flows, anomaly detection concepts, and smart requirement validation in payment domain projects.",
         ],
         "ai_tools": "GitHub Copilot, ChatGPT/GPT-4, Claude, Gemini, Prompt Engineering, LLM/GenAI, AI Agent Orchestration, RAG Concepts, AI-Assisted Testing, Playwright + AI",
         "fiserv_role": "QA Manager / QA Lead / Agile Lead",
@@ -137,7 +140,7 @@ ROLES = {
         "achievements": [
             "Recognised for consistent performance and QA leadership across critical banking platform releases at Fiserv.",
             "Awarded for excellence in stakeholder collaboration and cross-functional process improvement initiatives.",
-            "First in team to design and ship production AI agents, adopted as a standard Fiserv workflow tool.",
+            "First in team to design and ship 8 production AI agents, adopted as standard enterprise workflow tools.",
             "Delivered 3 major banking platform releases on time with zero critical production defects as QA owner.",
             "Expanded TOSCA regression suite across all 7 certification levels, achieving a 40% reduction in manual testing effort.",
             "Managed cross-functional squads delivering banking and payment capabilities with consistently high stakeholder satisfaction.",
@@ -156,25 +159,25 @@ ROLES = {
         "title": "AI Engineer  |  Agentic Automation Builder  |  QA Lead (Banking)",
         "summary": (
             "AI Engineer with 11+ years in Banking & Financial Services, now focused on designing and shipping "
-            "production AI agents. Engineered 5 agentic systems now running in live enterprise workflows, spanning "
-            "meeting automation, intelligent onboarding, team analytics, full-stack frontend scaffolding, and "
+            "production AI agents. Engineered 8 agentic systems now running in live enterprise workflows, spanning "
+            "leadership intelligence, release management, program analytics, intelligent onboarding, full-stack frontend scaffolding, and "
             "enterprise test automation (NSSPAR Playwright). Skilled in prompt engineering, LLM orchestration, and "
             "GenAI workflow design, grounded in deep domain knowledge of payment rails (ACH, RTP, P2P) from leading "
             "a 12-member Agile squad at Fiserv. Holder of 7 Tricentis TOSCA certifications and CSM certified. "
             "Targeting AI Engineer and agentic automation roles."
         ),
         "ai_expertise": [
-            "AI Agent Development: Designed and shipped 5 production AI agents covering meeting automation, user onboarding, team performance tracking, frontend scaffolding, and enterprise test automation (NSSPAR Playwright).",
+            "AI Agent Development: Designed and shipped 8 production AI agents covering leadership intelligence, release management, program analytics, user onboarding, frontend scaffolding, and enterprise test automation (NSSPAR Playwright).",
             "Agent Orchestration: Built multi-step agentic workflows that read source systems (APIs, meetings, backend code) and autonomously produce structured, actionable outputs.",
             "Prompt Engineering: Skilled in crafting precise prompts for LLMs (GPT-4, Claude, Gemini) to generate test cases, BRD/FRD content, acceptance criteria, and automated QA workflows directly from requirements.",
             "AI-Assisted Automation: Leveraged AI-assisted code generation to accelerate Playwright script creation, intelligent defect analysis, and automated test data setup, reducing scripting time by over 40%.",
-            "Domain-Grounded AI: Applied AI to intelligent onboarding flows, anomaly detection concepts, and smart requirement validation in payment domain projects at Fiserv.",
+            "Domain-Grounded AI: Applied AI to intelligent onboarding flows, anomaly detection concepts, and smart requirement validation in payment domain projects.",
         ],
         "ai_tools": "GitHub Copilot, ChatGPT/GPT-4, Claude, Gemini, Prompt Engineering, LLM/GenAI, AI Agent Orchestration, RAG Concepts, React/TypeScript, Playwright + AI",
         "fiserv_role": "AI Engineer / QA Lead / Agile Lead",
         "fiserv_bullets": [
-            "AI Agent Engineering: Designed, built, and shipped 5 production AI agents, each solving a distinct operational problem across meetings, onboarding, analytics, scaffolding, and test automation.",
-            "GenAI Onboarding Workflows: Engineered intelligent onboarding agents using Generative AI workflows, directly improving process efficiency and user experience for Fiserv PAR.",
+            "AI Agent Engineering: Designed, built, and shipped 8 production AI agents, each solving a distinct operational problem across leadership feedback, release management, onboarding, analytics, scaffolding, and test automation.",
+            "GenAI Onboarding Workflows: Engineered intelligent onboarding agents using Generative AI workflows, directly improving process efficiency and user experience for a core banking onboarding platform.",
             "Agent-Driven Test Automation: Built the NSSPAR Playwright agent, replacing Tricentis TOSCA with an AI-assisted framework for smoke, regression, and cross-browser CI/CD gates.",
             "Agile Squad Leadership: Directed a 12-member Agile squad delivering end-to-end onboarding and payment solutions across multiple critical production releases.",
             "Cross-Functional Collaboration: Partnered with stakeholders to validate requirements, define acceptance criteria, and ensure AI-driven workflows met business needs.",
@@ -186,7 +189,7 @@ ROLES = {
         ],
         "fiserv_tools": "GitHub Copilot, GenAI/LLM, Playwright, React/TypeScript, Agile/Scrum, TOSCA, ACH/RTP/P2P, NSSPAR/PAR, Azure DevOps",
         "achievements": [
-            "First in team to design and ship 5 production AI agents, adopted as a standard Fiserv workflow tool.",
+            "First in team to design and ship 8 production AI agents, adopted as standard enterprise workflow tools.",
             "Built an agentic test-automation framework (NSSPAR Playwright Agent) that replaced Tricentis TOSCA for a major release pipeline.",
             "Reduced Playwright scripting time by 40% through AI-assisted code generation and prompt engineering.",
             "Recognised for engineering innovation and AI-driven process transformation across critical banking platform releases.",
@@ -218,7 +221,7 @@ ROLES = {
             "Agentic Test Framework: Built the NSSPAR Playwright Agent, an enterprise framework replacing TOSCA with smoke, regression, and cross-browser CI/CD gates driven by AI-assisted flaky-test triage.",
             "Prompt Engineering for QA: Skilled in crafting precise prompts for LLMs (GPT-4, Claude, Gemini) to generate test cases, acceptance criteria, and automated QA workflows directly from requirements.",
             "Generative AI in QA: Applied GenAI tools to test coverage gap analysis, risk identification, sprint reporting, and stakeholder communication, making QA processes faster and data-driven.",
-            "AI Agent Development: Engineered 5 production AI agents spanning meeting automation, onboarding, analytics, and frontend scaffolding.",
+            "AI Agent Development: Engineered 8 production AI agents spanning leadership intelligence, release management, program analytics, onboarding, and frontend scaffolding.",
         ],
         "ai_tools": "GitHub Copilot, ChatGPT/GPT-4, Claude, Gemini, Prompt Engineering, LLM/GenAI, AI-Assisted Testing, Playwright + AI, Flaky-Test Triage, Azure DevOps",
         "fiserv_role": "AI Tester / QA Lead / Agile Lead",
@@ -237,7 +240,7 @@ ROLES = {
         "fiserv_tools": "Playwright, TOSCA, GenAI/LLM, Azure DevOps, Agile/Scrum, Jira, ACH/RTP/P2P, UAT, NSSPAR/PAR",
         "achievements": [
             "Replaced Tricentis TOSCA with an AI-assisted Playwright framework, cutting manual regression effort by 40%.",
-            "First in team to design and ship production AI agents, adopted as a standard Fiserv workflow tool.",
+            "First in team to design and ship 8 production AI agents, adopted as standard enterprise workflow tools.",
             "Reduced Playwright scripting time by 40% through AI-assisted code generation and prompt engineering.",
             "Recognised for consistent performance and QA innovation across critical banking platform releases at Fiserv.",
             "Awarded for excellence in stakeholder collaboration and cross-functional process improvement initiatives.",
@@ -439,7 +442,7 @@ def build_resume(role_key, data):
     add_plain(doc, "Tools: " + FIS_GLOBAL_TOOLS, size=9.5, italic=True, space_after=6)
 
     # AI Agents
-    add_heading(doc, "AI Agents Engineered - 5 Production Systems - Live at Fiserv")
+    add_heading(doc, "AI Agents Engineered - 8 Production Systems")
     for name, desc in AI_AGENTS:
         add_bullet(doc, desc, bold_lead=name + " - ")
 

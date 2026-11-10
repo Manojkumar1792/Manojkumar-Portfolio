@@ -38,7 +38,7 @@ document.addEventListener('click', e => {
 const phrases = [
   'QA Lead · 11+ Years Experience',
   'Agile Lead · CSM Certified',
-  'AI Agent Engineer · 5 Production Systems',
+  'AI Agent Engineer · 8 Production Systems',
   'Banking & FinTech QA Expert',
   'TOSCA Expert · 7 Certifications',
   'QA Manager · AI Tester'
@@ -195,7 +195,7 @@ if (chatbot) {
 
   const faq = {
     skills: "QA Leadership, QA Strategy & Governance, AI Agent Engineering, and AI-Augmented Testing — backed by 7× Tricentis TOSCA certification, CSM Scrum certification, Playwright automation, and prompt engineering / GenAI workflows.",
-    agents: "5 production AI agents engineered and shipped into live enterprise workflows — including the NSSPAR Playwright Agent, which replaced Tricentis TOSCA for a key testing workflow.",
+    agents: "8 production AI agents engineered and shipped into live enterprise workflows — including the NSSPAR Playwright Agent, which replaced Tricentis TOSCA for a key testing workflow.",
     experience: "11+ years in Banking & FinTech QA at Fiserv, hands-on leading a 12-member Agile squad, owning QA strategy, UAT coordination, and release governance across 3 major banking releases.",
     contact: "Best via the Contact form below, or email mkmanojmsc@gmail.com / connect on LinkedIn — both linked in the Contact section.",
     certifications: "7× Tricentis TOSCA certified (AS1, AS2, AE1, TDS1, TDS2, TQM, TA1) and CSM certified Scrum practitioner.",
