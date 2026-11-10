@@ -16,6 +16,36 @@ window.addEventListener('scroll', () => {
 
 backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// ── Background music toggle ──────────────────────────
+const musicToggle = document.getElementById('musicToggle');
+const bgMusic = document.getElementById('bgMusic');
+if (musicToggle && bgMusic) {
+  bgMusic.volume = 0.25;
+  const musicIco = musicToggle.querySelector('.music-ico');
+
+  function setMusicState(playing) {
+    musicToggle.classList.toggle('playing', playing);
+    musicToggle.setAttribute('aria-pressed', String(playing));
+    if (musicIco) musicIco.textContent = playing ? '🔊' : '🎵';
+    localStorage.setItem('bgMusicPlaying', String(playing));
+  }
+
+  musicToggle.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
+    } else {
+      bgMusic.pause();
+      setMusicState(false);
+    }
+  });
+
+  // Resume automatically only if the visitor had music on earlier in this browser —
+  // browsers still require a prior user gesture, so this quietly no-ops if blocked.
+  if (localStorage.getItem('bgMusicPlaying') === 'true') {
+    bgMusic.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
+  }
+}
+
 // ── Cursor glow ─────────────────────────────────────
 const cursorGlow = document.getElementById('cursorGlow');
 window.addEventListener('mousemove', (e) => {
