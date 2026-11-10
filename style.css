@@ -433,6 +433,19 @@ nav.scrolled .nav-pill {
 .bo-loc { font-size: .78rem; color: var(--text2); font-weight: 500; }
 
 /* --- AI AGENTS ----------------------------------------------- */
+.impact-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-top: 36px; background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 26px 20px; box-shadow: var(--shadow);
+}
+.impact-item { text-align: center; padding: 0 10px; border-right: 1px solid var(--border); }
+.impact-item:last-child { border-right: none; }
+.impact-n {
+  display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 800;
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem); letter-spacing: -.03em; color: var(--primary); line-height: 1;
+}
+.impact-l { display: block; font-size: .74rem; color: var(--text2); font-weight: 600; margin-top: 8px; }
+
 .agents-list { display: flex; flex-direction: column; gap: 12px; margin-top: 48px; }
 .agent-card {
   display: grid; grid-template-columns: 72px 1fr 160px;
@@ -1095,6 +1108,7 @@ nav.scrolled .nav-pill {
   .role-grid { grid-template-columns: 1fr 1fr; }
   .elig-grid { grid-template-columns: 1fr 1fr; }
   .eval-grid { grid-template-columns: 1fr 1fr; }
+  .impact-strip { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .vp-grid { grid-template-columns: 1fr; }
@@ -1102,6 +1116,10 @@ nav.scrolled .nav-pill {
   .role-grid { grid-template-columns: 1fr; }
   .elig-grid { grid-template-columns: 1fr; }
   .eval-grid { grid-template-columns: 1fr; }
+  .impact-strip { grid-template-columns: 1fr 1fr; }
+  .impact-item:nth-child(2) { border-right: none; }
+  .impact-item { border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+  .impact-item:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
   .cs-flow { flex-direction: column; align-items: stretch; }
   .cs-arrow { transform: rotate(90deg); align-self: center; }
   .grand-banner { flex-direction: column; align-items: flex-start; text-align: left; }
