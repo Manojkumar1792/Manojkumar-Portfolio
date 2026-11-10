@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manojkumar SA — AI Architect · Systems &amp; Platform Design</title>
+  <meta name="description" content="AI Architect with 11+ years in Banking &amp; FinTech, designing the system architecture behind 9 production AI agents — RAG vs fine-tuning, serverless vs hosted, and governance trade-offs documented end-to-end."/>
+  <link rel="icon" type="image/jpeg" href="profile.jpg"/>
+  <link rel="canonical" href="https://manojkumar1792.github.io/Manojkumar-Portfolio/index-ai-architect.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Manojkumar SA — AI Architect · Systems &amp; Platform Design"/>
+  <meta property="og:description" content="AI Architect designing the system architecture behind 9 production AI agents — RAG vs fine-tuning, serverless vs hosted, and governance trade-offs documented end-to-end."/>
+  <meta property="og:image" content="https://manojkumar1792.github.io/Manojkumar-Portfolio/profile.jpg"/>
+  <meta property="og:url" content="https://manojkumar1792.github.io/Manojkumar-Portfolio/index-ai-architect.html"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Manojkumar SA — AI Architect · Systems &amp; Platform Design"/>
+  <meta name="twitter:description" content="AI Architect documenting design decisions and trade-offs behind 9 production AI agents."/>
+  <meta name="twitter:image" content="https://manojkumar1792.github.io/Manojkumar-Portfolio/profile.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css?v=4"/>
+</head>
+<body>
+
+<!-- Scroll progress & cursor -->
+<div id="scrollBar" class="scroll-bar"></div>
+<div id="cursorGlow" class="cursor-glow"></div>
+
+<!-- NAV: centered pill -->
+<nav id="nav">
+  <div class="nav-pill">
+    <a href="#hero" class="nav-logo">MK<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">↩ All Roles</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#ai-agents">AI Agents</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="resume-ai-architect.html" target="_blank" class="nav-resume">AI Architect Resume ↗</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+
+  <div class="hero-layout">
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-avail">
+        <span class="avail-dot"></span>
+        Available · AI Architect Roles · Chennai, IN
+      </div>
+
+      <h1 class="hero-name">
+        <span class="hn-top">Manoj<span class="hn-dim">kumar</span></span>
+        <span class="hn-bot"><span class="hn-grad">SA</span><span class="hn-dot">.</span></span>
+      </h1>
+
+      <div class="hero-role-wrap">
+        <span id="typedRole"></span><span class="role-cursor">|</span>
+      </div>
+
+      <p class="hero-desc">
+        <strong>11+ years</strong> in Banking &amp; FinTech, now architecting
+        production <strong class="hero-ai-label">AI agent systems</strong> — evaluating RAG vs
+        fine-tuning, serverless vs hosted, and governance trade-offs for 9 agents
+        running in live enterprise workflows.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#ai-agents" class="btn-neon">Explore AI Work ↗</a>
+        <a href="#experience" class="btn-outline">Experience</a>
+        <a href="resume-ai-architect.html" target="_blank" class="btn-ghost">↗ AI Architect Resume</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: floating info cards -->
+    <div class="hero-right">
+      <div class="hf-card hero-photo-card">
+        <img class="hero-photo" src="profile.jpg" alt="Manojkumar SA"/>
+        <div class="hero-photo-name">Manojkumar SA</div>
+      </div>
+      <div class="hf-card hfc-top float-a">
+        <div class="hfc-eyebrow">Currently at</div>
+        <div class="hfc-co">Fiserv</div>
+        <div class="hfc-role">AI Architect · QA Lead (Banking) · Agile Lead</div>
+        <div class="hfc-footer">
+          <span class="hfc-live"><span></span>Active</span>
+          <span>Since Feb 2020</span>
+        </div>
+      </div>
+
+      <div class="hf-card hfc-mid float-b">
+        <div class="hfc-eyebrow">System Designer</div>
+        <div class="hfc-big">9<span>+</span></div>
+        <div class="hfc-sub">Agents, Each With a Documented Design Decision</div>
+        <div class="hfc-tags">
+          <span>RAG vs Fine-Tune</span><span>Serverless</span><span>Governance</span>
+        </div>
+      </div>
+
+      <div class="hf-card hfc-bot float-c">
+        <div class="hfc-eyebrow">TOSCA Certified</div>
+        <div class="hfc-certs">
+          <span>AS1</span><span>AS2</span><span>AE1</span><span>TDS1</span>
+          <span>TDS2</span><span>TQM</span><span>TA1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI strip -->
+  <div class="hero-kpis">
+    <div class="hk"><span class="hk-n">11+</span><span class="hk-l">Years Exp</span></div>
+    <div class="hk-sep"></div>
+    <div class="hk"><span class="hk-n">9+</span><span class="hk-l">AI Agents</span></div>
+    <div class="hk-sep"></div>
+    <div class="hk"><span class="hk-n">12</span><span class="hk-l">Team Led</span></div>
+    <div class="hk-sep"></div>
+    <div class="hk"><span class="hk-n">7×</span><span class="hk-l">TOSCA Certs</span></div>
+    <div class="hk-sep"></div>
+    <div class="hk"><span class="hk-n">9</span><span class="hk-l">Design Decisions Documented</span></div>
+  </div>
+
+  <a class="hero-scroll" href="#about"><span>scroll</span><div class="hs-line"></div></a>
+</section>
+
+<!-- WHY HIRE ME -->
+<section class="section s-alt" id="value">
+  <div class="container">
+    <div class="sec-label">/ 01 &nbsp; Value</div>
+    <h2 class="sec-h2">Why I'm the Right <span class="text-grad">Hire</span></h2>
+    <p class="sec-sub">System-design judgment, deep QA domain expertise, and banking context — not just hands-on build skill</p>
+    <div class="vp-grid">
+
+      <div class="vp-card vc-cyan reveal">
+        <div class="vp-top"><span class="vp-ico">🧭</span><span class="vp-num">01</span></div>
+        <h3>System &amp; Trade-off Design</h3>
+        <p>Documented a concrete design decision and tech-stack trade-off for every one of 9 production AI agents — RAG vs fine-tuning, serverless vs hosted, sync vs async — not just what was built, but why.</p>
+        <span class="vp-badge">9 Decisions · Documented</span>
+      </div>
+
+      <div class="vp-card vc-indigo reveal">
+        <div class="vp-top"><span class="vp-ico">🏆</span><span class="vp-num">02</span></div>
+        <h3>QA Leadership Background</h3>
+        <p>11+ years directing 12-member Agile squads to deliver zero-defect banking releases. Deep domain grounding that makes the systems I design genuinely useful, not just technically interesting.</p>
+        <span class="vp-badge">11+ Years · Banking QA</span>
+      </div>
+
+      <div class="vp-card vc-rose reveal">
+        <div class="vp-top"><span class="vp-ico">💳</span><span class="vp-num">03</span></div>
+        <h3>Banking Domain</h3>
+        <p>Deep expertise in ACH, RTP, P2P payment systems at Fiserv and FIS Global. Instant understanding of compliance rules, BFS regulations, and complex payment workflows — no ramp-up time.</p>
+        <span class="vp-badge">Fiserv · FIS Global</span>
+      </div>
+
+      <div class="vp-card vc-amber reveal">
+        <div class="vp-top"><span class="vp-ico">🛡️</span><span class="vp-num">04</span></div>
+        <h3>Governance &amp; Compliance Architecture</h3>
+        <p>Designs for auditability by default — Git-versioned scoring, deterministic fallbacks, and role-based access — meeting banking compliance expectations without slowing teams down.</p>
+        <span class="vp-badge">Audit-Ready by Design</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT BENTO -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-label">/ 02 &nbsp; About</div>
+
+    <div class="bento">
+      <!-- Bio card — 2×2 -->
+      <div class="bento-bio reveal">
+        <div class="bb-tag">AI Architect · QA Lead (Banking) · Agile Lead</div>
+        <h2 class="bb-h">Where <em>Judgment</em><br/>meets <em>Engineering</em></h2>
+        <p class="bb-body">AI Architect with <strong>11+ years in Banking &amp; Financial Services</strong>.
+        Designed the system architecture — and documented the trade-offs — behind <strong>9 production AI agents</strong> now
+        running in live enterprise workflows, grounded in a proven track record leading a <strong>12-member Agile squad</strong>
+        at Fiserv delivering ACH, RTP &amp; P2P payment solutions.</p>
+        <div class="bb-contacts">
+          <a href="tel:9698162889" class="bbc">📞 9698162889</a>
+          <a href="mailto:mkmanojmsc@gmail.com" class="bbc">✉ mkmanojmsc@gmail.com</a>
+          <span class="bbc">📍 Chennai, TN</span>
+        </div>
+        <div class="bb-soc">
+          <a href="https://www.linkedin.com/in/manoj-kumar-s-a-56a82492/" target="_blank" rel="noopener" class="bbsoc linkedin">LinkedIn ↗</a>
+          <a href="https://github.com/Manojkumar1792" target="_blank" rel="noopener" class="bbsoc github">GitHub ↗</a>
+          <a href="resume-ai-architect.html" target="_blank" class="bbsoc resume">AI Architect Resume ↗</a>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="bento-stat s1 reveal"><span class="bs-n neon">9+</span><span class="bs-l">AI Agents</span></div>
+      <div class="bento-stat s2 reveal"><span class="bs-n blue">11+</span><span class="bs-l">Years Exp</span></div>
+      <div class="bento-stat s3 reveal"><span class="bs-n purple">9</span><span class="bs-l">Design Decisions</span></div>
+      <div class="bento-stat s4 reveal"><span class="bs-n amber">12</span><span class="bs-l">Team Led</span></div>
+
+      <!-- Currently at -->
+      <div class="bento-curr reveal">
+        <div class="bc-ind"><span class="bc-live"></span>Currently at</div>
+        <div class="bc-name">Fiserv</div>
+        <div class="bc-role">AI Architect · QA Lead (Banking) · Agile Lead</div>
+        <div class="bc-since">Feb 2020 – Present · 5+ years</div>
+      </div>
+
+      <!-- Open to work -->
+      <div class="bento-open reveal">
+        <div class="bo-badge">🟢 Open to Work</div>
+        <div class="bo-roles">
+          <span>AI Architect</span><span>AI Engineer</span><span>AI Tester</span><span>QA Lead</span>
+        </div>
+        <div class="bo-loc">Chennai · Remote · Hybrid</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI AGENTS -->
+<section class="section s-alt" id="ai-agents">
+  <div class="container">
+    <div class="sec-label">/ 03 &nbsp; AI Agents</div>
+    <h2 class="sec-h2">AI Agents <span class="text-grad">I Designed</span></h2>
+    <p class="sec-sub">9 production agents, each backed by a documented design decision · Running in real enterprise workflows</p>
+
+    <div class="impact-strip reveal">
+      <div class="impact-item">
+        <span class="impact-n">9</span>
+        <span class="impact-l">Production AI Agents</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-n">15+</span>
+        <span class="impact-l">Teams &amp; Users Impacted</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-n">40-85%</span>
+        <span class="impact-l">Efficiency Gains per Agent</span>
+      </div>
+      <div class="impact-item">
+        <span class="impact-n">0</span>
+        <span class="impact-l">Critical Defects Across 3 Releases</span>
+      </div>
+    </div>
+
+    <div class="agents-list">
+
+      <div class="agent-card reveal">
+        <div class="ac-num">01</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🤝</span>
+            <div>
+              <h3>Skip Level Agent</h3>
+              <div class="ac-tags"><span class="act star">★ Featured</span><span class="act">Leadership Intelligence</span><span class="act">Sentiment Analysis</span></div>
+            </div>
+          </div>
+          <p>AI assistant for skip-level conversations — lets employees share feedback and raise concerns beyond their direct manager, detects risk and sentiment signals, and turns every interaction into structured, prioritized summaries for leadership.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val">100%</div>
+          <div class="am-label">Auto Capture</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">02</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🗓️</span>
+            <div>
+              <h3>Release Checklist Agent</h3>
+              <div class="ac-tags"><span class="act">Azure OpenAI</span><span class="act">RAG</span></div>
+            </div>
+          </div>
+          <p>Conversational agent that turns a single Release Lock date into a fully-dated 21-step release checklist — auto-calculating code lock, QA drop, CRQ, ORB and CAB dates via RAG over a release calendar, with automated email reminders for overdue items.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val amber">21</div>
+          <div class="am-label">Tasks Auto-Dated</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">03</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🏆</span>
+            <div>
+              <h3>AI Upliftment Program Hub</h3>
+              <div class="ac-tags"><span class="act">Gamification</span><span class="act">Portfolio Analytics</span></div>
+            </div>
+          </div>
+          <p>Live, auto-updating leaderboard and tracking hub for AI adoption across teams — logging use cases, demos, and training completions per member, with director-level portfolio analytics replacing manual spreadsheet tracking.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val blue">↑40%</div>
+          <div class="am-label">Engagement</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">04</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🏦</span>
+            <div>
+              <h3>User Onboarding Agent</h3>
+              <div class="ac-tags"><span class="act">Banking</span><span class="act">Compliance</span></div>
+            </div>
+          </div>
+          <p>Guides new users through core banking product setup, compliance workflows, and product selection — reducing manual onboarding effort and improving first-time success rates.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val purple">PAR</div>
+          <div class="am-label">Onboarding</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">05</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🎭</span>
+            <div>
+              <h3>Intelligent Frontend Scaffold Agent</h3>
+              <div class="ac-tags"><span class="act">React</span><span class="act">TypeScript</span><span class="act">Codebase Analysis</span></div>
+            </div>
+          </div>
+          <p>Analyses a backend codebase or API contract and auto-generates a production-ready React + TypeScript frontend — full CRUD pages, auth flows, and CI/CD. Cuts UI delivery from weeks to hours.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val amber">85%</div>
+          <div class="am-label">Faster Delivery</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">06</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🧪</span>
+            <div>
+              <h3>Intelligent Testing Agent</h3>
+              <div class="ac-tags"><span class="act">Data-Driven Testing</span><span class="act">Reporting</span></div>
+            </div>
+          </div>
+          <p>Unified web agent to create, select, execute, and manage automated test runs — supports data-driven testing from uploaded files or database records, with real-time status, downloadable reports, and automatic failure highlighting for fast remediation.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val">70%</div>
+          <div class="am-label">Less Manual Effort</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">07</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🔬</span>
+            <div>
+              <h3>NSSPAR Playwright Agent</h3>
+              <div class="ac-tags"><span class="act">Playwright</span><span class="act">Azure DevOps</span><span class="act">CI/CD Gates</span></div>
+            </div>
+          </div>
+          <p>Enterprise Playwright framework replacing Tosca for NSSPAR. Smoke, regression, cross-browser packs with Azure DevOps quality gates and AI-driven flaky-test quarantine logic.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val">60%</div>
+          <div class="am-label">Faster Cycles</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">08</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">⚖️</span>
+            <div>
+              <h3>Judging Arena Agent</h3>
+              <div class="ac-tags"><span class="act">Serverless</span><span class="act">GitLab Pages</span></div>
+            </div>
+          </div>
+          <p>Fully self-contained, serverless judging and live-leaderboard app for a 15-team Knowledge Base Agent Championship — judges score five weighted criteria via PIN login, organizers run a full admin panel, and a cinematic auto-generated "Winners Video" plays at the finale. No backend or database; every score is versioned as JSON in Git.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val blue">15</div>
+          <div class="am-label">Teams Judged</div>
+        </div>
+      </div>
+
+      <div class="agent-card reveal">
+        <div class="ac-num">09</div>
+        <div class="ac-body">
+          <div class="ac-head">
+            <span class="ac-ico">🎮</span>
+            <div>
+              <h3>AgentVerse</h3>
+              <div class="ac-tags"><span class="act">Prompt Engineering</span><span class="act">Live Judging</span></div>
+            </div>
+          </div>
+          <p>15-minute, prompt-driven AI agent-building competition — teams get a randomly assigned, locked challenge and build against a shared baseline model, varying only their prompt. A live AI Judge Panel scores 6 dimensions including prompt quality, with a public Prompt Gallery, Live Leaderboard, Hall of Fame, and Admin Dashboard — packaged as a single-file web app.</p>
+        </div>
+        <div class="ac-metric">
+          <div class="am-val amber">6</div>
+          <div class="am-label">Judging Dimensions</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="eval-block">
+      <div class="ach-label" style="margin-bottom:6px;">Architecture Decisions Log</div>
+      <h3 class="bb-h" style="font-size:1.3rem;">How I Think — One Documented Trade-off Per Agent</h3>
+      <div class="eval-grid">
+        <div class="eval-card">
+          <span class="eval-ico">🤝</span>
+          <h4>Skip Level Agent</h4>
+          <p><em>"Chose a deterministic heuristic extractor as the default path with LLM extraction as an optional upgrade — the agent never fully fails, even if the LLM API is down, rate-limited, or unavailable."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🗓️</span>
+          <h4>Release Checklist Agent</h4>
+          <p><em>"Chose RAG over fine-tuning for the release-calendar lookup — the calendar changes every release cycle, so grounding answers in a live document beats retraining a model on dates that go stale in weeks."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🏆</span>
+          <h4>AI Upliftment Program Hub</h4>
+          <p><em>"Chose GitLab-API-backed storage over a dedicated database — avoids standing up and maintaining backend infrastructure for an internal engagement tool with a few hundred users."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🏦</span>
+          <h4>User Onboarding Agent</h4>
+          <p><em>"Chose a step-resolver pattern — a pure function of profile state — over a stateful workflow engine. It keeps onboarding logic testable and makes resuming an interrupted session trivial."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🎭</span>
+          <h4>Intelligent Frontend Scaffold Agent</h4>
+          <p><em>"Chose static analysis of API contracts over running the backend at generation time — keeps the agent safe to run against any codebase without ever executing untrusted code."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🧪</span>
+          <h4>Intelligent Testing Agent</h4>
+          <p><em>"Chose to decouple test selection from execution — the same orchestrator runs ad-hoc UI-selected tests or scheduled CI batches without duplicating logic in two places."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🔬</span>
+          <h4>NSSPAR Playwright Agent</h4>
+          <p><em>"Chose a rolling 5-run history for flake detection over a single pass/fail flag — a test that alternates outcomes is a different risk than one that fails consistently, and only the former should be quarantined."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">⚖️</span>
+          <h4>Judging Arena Agent</h4>
+          <p><em>"Required 6 independent judge scores before finalizing a result, with no single judge able to seal a score — removes single-point bias in a live competition."</em></p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🎮</span>
+          <h4>AgentVerse</h4>
+          <p><em>"Chose a seeded random draw for challenge assignment, recorded before the event starts — in a 15-minute live format there's no time to litigate fairness disputes, so the draw itself has to be provably unbiased."</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="sec-label">/ 04 &nbsp; Skills</div>
+    <h2 class="sec-h2">Technical <span class="text-grad">Mastery</span></h2>
+  </div>
+
+  <!-- Marquee ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="ticker-inner">
+        <span>Agent Orchestration</span><span class="td">·</span><span>RAG vs Fine-Tuning</span><span class="td">·</span>
+        <span>GenAI / LLM</span><span class="td">·</span><span>Playwright</span><span class="td">·</span>
+        <span>React / TypeScript</span><span class="td">·</span><span>Azure DevOps</span><span class="td">·</span>
+        <span>TOSCA</span><span class="td">·</span><span>Agile / Scrum</span><span class="td">·</span>
+        <span>Jira</span><span class="td">·</span><span>SQL</span><span class="td">·</span>
+        <span>ACH · RTP · P2P</span><span class="td">·</span><span>Confluence</span><span class="td">·</span>
+        <span>Agent Orchestration</span><span class="td">·</span><span>RAG vs Fine-Tuning</span><span class="td">·</span>
+        <span>GenAI / LLM</span><span class="td">·</span><span>Playwright</span><span class="td">·</span>
+        <span>React / TypeScript</span><span class="td">·</span><span>Azure DevOps</span><span class="td">·</span>
+        <span>TOSCA</span><span class="td">·</span><span>Agile / Scrum</span><span class="td">·</span>
+        <span>Jira</span><span class="td">·</span><span>SQL</span><span class="td">·</span>
+        <span>ACH · RTP · P2P</span><span class="td">·</span><span>Confluence</span><span class="td">·</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="skills-bento">
+      <div class="sk-bcard reveal">
+        <div class="skb-pct neon">92%</div>
+        <div class="skb-cat">AI Systems Architecture</div>
+        <ul class="skb-list">
+          <li>Agent Architecture &amp; Orchestration Patterns</li>
+          <li>RAG vs Fine-Tuning Trade-off Analysis</li>
+          <li>LLM Evaluation, Guardrails &amp; Hallucination Handling</li>
+          <li>Serverless vs Hosted Infrastructure Design</li>
+          <li>Prompt Engineering (LLMs)</li>
+        </ul>
+      </div>
+      <div class="sk-bcard reveal">
+        <div class="skb-pct blue">88%</div>
+        <div class="skb-cat">Platform Engineering</div>
+        <ul class="skb-list">
+          <li>React / TypeScript Scaffolding</li>
+          <li>OpenAPI-Driven Code Generation</li>
+          <li>Azure DevOps CI/CD Gates</li>
+          <li>Backend API &amp; Contract Analysis</li>
+          <li>GitHub Copilot Workflows</li>
+        </ul>
+      </div>
+      <div class="sk-bcard reveal">
+        <div class="skb-pct purple">95%</div>
+        <div class="skb-cat">QA &amp; Testing</div>
+        <ul class="skb-list">
+          <li>TOSCA (AS1–TQM) · 7 Certifications</li>
+          <li>UAT Coordination &amp; Sign-off</li>
+          <li>Functional / Regression Testing</li>
+          <li>Test Strategy &amp; Planning</li>
+        </ul>
+      </div>
+      <div class="sk-bcard reveal">
+        <div class="skb-pct amber">96%</div>
+        <div class="skb-cat">Agile &amp; Leadership</div>
+        <ul class="skb-list">
+          <li>Scrum / Agile · CSM Certified</li>
+          <li>PI Planning &amp; Backlog Grooming</li>
+          <li>Team Leadership (12+ members)</li>
+          <li>Cross-functional Collaboration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="matrix-card reveal">
+      <div class="mx-label">/ Expertise Matrix</div>
+      <table class="mx-table">
+        <thead><tr><th>Domain</th><th>Skills / Tools</th><th>Level</th><th>Experience</th></tr></thead>
+        <tbody>
+          <tr><td>AI Systems Architecture</td><td>Agent Orchestration, RAG, Trade-off Design, Governance</td><td><span class="lv ex">Expert</span></td><td>2 yrs</td></tr>
+          <tr><td>Automation Engineering</td><td>Playwright, Azure DevOps, CI/CD</td><td><span class="lv ex">Expert</span></td><td>2 yrs</td></tr>
+          <tr><td>Platform Engineering</td><td>React, TypeScript, OpenAPI</td><td><span class="lv ad">Advanced</span></td><td>1.5 yrs</td></tr>
+          <tr><td>QA Management</td><td>TOSCA, UAT, Regression, Test Strategy</td><td><span class="lv ex">Expert</span></td><td>11 yrs</td></tr>
+          <tr><td>Agile Leadership</td><td>Scrum, PI Planning, CSM</td><td><span class="lv ex">Expert</span></td><td>8 yrs</td></tr>
+          <tr><td>Payments QA</td><td>ACH, RTP, P2P, Fiserv NSSPAR</td><td><span class="lv ex">Expert</span></td><td>6 yrs</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="sec-label">/ 05 &nbsp; Projects</div>
+    <h2 class="sec-h2">Notable <span class="text-grad">Work</span></h2>
+    <p class="sec-sub">Key architecture &amp; engineering deliveries across Fiserv, FIS Global and personal projects</p>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal" style="--ac:#06b6d4">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">🧭</span><div class="pc-tags"><span>AI</span><span>Architecture</span></div></div>
+        <h3>AI Agents Suite (9 Agents)</h3>
+        <p>Designed the architecture and documented trade-offs for 9 production AI agents: Skip Level, Release Checklist, AI Upliftment Program Hub, User Onboarding, Intelligent Frontend Scaffold, Intelligent Testing, NSSPAR Playwright, Judging Arena, and AgentVerse.</p>
+        <div class="pc-chips"><span>Agent Orchestration</span><span>RAG</span><span>Serverless</span><span>GenAI</span></div>
+        <div class="pc-impact" style="--ic:#06b6d4">9 agents live</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#f59e0b">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">🔄</span><div class="pc-tags"><span>Automation</span><span>TOSCA</span></div></div>
+        <h3>TOSCA Regression Maturity</h3>
+        <p>Expanded TOSCA regression suite across 7 certification levels (AS1–TQM). Reduced manual regression effort by 40%, enabling continuous deployment confidence across Fiserv.</p>
+        <div class="pc-chips"><span>TOSCA</span><span>Regression</span><span>CI/CD</span><span>7 Certs</span></div>
+        <div class="pc-impact" style="--ic:#f59e0b">↓ 40% manual effort</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#6366f1">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">💳</span><div class="pc-tags"><span>Fiserv</span><span>Payments</span></div></div>
+        <h3>PAR &amp; NSSPAR Onboarding QA</h3>
+        <p>End-to-end QA ownership for Fiserv flagship onboarding. Defined test strategy, managed UAT, and secured compliance sign-off across ACH, RTP &amp; P2P payment rails.</p>
+        <div class="pc-chips"><span>TOSCA</span><span>UAT</span><span>ACH/RTP/P2P</span><span>Fiserv</span></div>
+        <div class="pc-impact" style="--ic:#6366f1">↓ 25% cycle time</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#a855f7">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">🗺</span><div class="pc-tags"><span>FIS Global</span><span>Banking</span></div></div>
+        <h3>Data Navigator QA Suite</h3>
+        <p>Full lifecycle QA for FIS Data Navigator. BRD-driven test cases, integration scenarios, Jira defect workflow with 100% requirement traceability maintained throughout.</p>
+        <div class="pc-chips"><span>SQL</span><span>Jira</span><span>HP QC</span><span>BRD</span></div>
+        <div class="pc-impact" style="--ic:#a855f7">100% traceability</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#f43f5e">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">👥</span><div class="pc-tags"><span>Agile</span><span>Leadership</span></div></div>
+        <h3>12-Member Agile Squad</h3>
+        <p>Led PI planning, sprint ceremonies, and backlog management for a 12-person squad at Fiserv delivering 3 major banking platform releases with zero critical defects in production.</p>
+        <div class="pc-chips"><span>Scrum</span><span>PI Planning</span><span>CSM</span><span>VersionOne</span></div>
+        <div class="pc-impact" style="--ic:#f43f5e">3 major releases</div>
+      </div>
+
+      <div class="proj-card reveal" style="--ac:#10b981">
+        <div class="pc-stripe"></div>
+        <div class="pc-head"><span class="pc-ico">📊</span><div class="pc-tags"><span>Analytics</span><span>Reporting</span></div></div>
+        <h3>QA Metrics Dashboard</h3>
+        <p>Tableau &amp; Power BI dashboards tracking defect density, pass rates, and UAT sign-off trends — real-time quality visibility enabling leadership to make data-driven decisions.</p>
+        <div class="pc-chips"><span>Tableau</span><span>Power BI</span><span>SQL</span></div>
+        <div class="pc-impact" style="--ic:#10b981">Real-time insights</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section s-alt" id="experience">
+  <div class="container">
+    <div class="sec-label">/ 06 &nbsp; Experience</div>
+    <h2 class="sec-h2">Career <span class="text-grad">Journey</span></h2>
+
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-left">
+          <div class="tl-period">Feb 2020 – Present</div>
+          <div class="tl-node active"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-logo">F</div>
+            <div class="tl-info">
+              <h3>AI Architect / AI Engineer / QA Lead / Agile Lead</h3>
+              <div class="tl-co">Fiserv · Chennai</div>
+            </div>
+            <span class="tl-badge curr">Current · 5+ yrs</span>
+          </div>
+          <ul class="tl-points">
+            <li><strong>Architecture Ownership:</strong> Authored the design-decision and trade-off record for every one of 9 production AI agents, from RAG-vs-fine-tuning calls to serverless-vs-hosted infrastructure choices</li>
+            <li><strong>AI Agent Engineering:</strong> Designed, built, and shipped 9 production AI agents, each solving a distinct operational problem across leadership feedback, release management, onboarding, analytics, scaffolding, and test automation</li>
+            <li><strong>Agentic Test Automation:</strong> Architected the NSSPAR Playwright Agent, replacing Tricentis TOSCA with an AI-assisted framework for smoke, regression, and cross-browser CI/CD gates</li>
+            <li><strong>Agile Squad Leadership:</strong> Directed a 12-member Agile squad delivering end-to-end onboarding and payment solutions across multiple critical production releases</li>
+            <li><strong>Stakeholder Collaboration:</strong> Validated requirements, defined acceptance criteria, and ensured AI-driven system designs met business needs</li>
+          </ul>
+          <div class="tl-highlights">
+            <div class="tlh-label">Additional Highlights</div>
+            <ul class="tl-points tl-sm">
+              <li><strong>First in Team:</strong> First engineer in the organisation to design and ship production AI agents that are now standard workflow tools</li>
+              <li><strong>Long-term Tenure:</strong> 5+ years of consistent delivery demonstrating reliability and deep domain expertise</li>
+              <li><strong>Process Optimisation:</strong> Reduced cycle time by <strong class="text-neon">25%</strong> through automation adoption and streamlined defect workflows</li>
+              <li><strong>Client Engagement:</strong> Engaged clients in requirement workshops and release demos, strengthening trust</li>
+              <li><strong>Strategic Impact:</strong> Enhanced onboarding success rates and payment system stability at enterprise scale</li>
+            </ul>
+          </div>
+          <div class="tl-chips">
+            <span>VS Code Copilot</span><span>GenAI/LLM</span><span>Playwright</span><span>React/TypeScript</span>
+            <span>Azure DevOps</span><span>TOSCA</span><span>Agile/Scrum</span><span>ACH/RTP/P2P</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-left">
+          <div class="tl-period">Jul 2015 – Feb 2020</div>
+          <div class="tl-node"></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-logo fis">FIS</div>
+            <div class="tl-info">
+              <h3>QA Lead / Software Test Analyst I &amp; II</h3>
+              <div class="tl-co">FIS Global · Chennai</div>
+            </div>
+            <span class="tl-badge">4.5 yrs</span>
+          </div>
+          <ul class="tl-points">
+            <li><strong>Functional Validation:</strong> Payment systems and digital banking applications across multiple BFS projects</li>
+            <li><strong>Test Design:</strong> Complex scenarios for end-to-end functional, integration, and regression testing</li>
+            <li><strong>Defect Management:</strong> Full lifecycle using Jira and HP Quality Centre with deep root cause analysis</li>
+            <li><strong>Traceability:</strong> <strong>100% requirement traceability</strong> with detailed documentation and coverage reports</li>
+          </ul>
+          <div class="tl-highlights">
+            <div class="tlh-label">Additional Highlights</div>
+            <ul class="tl-points tl-sm">
+              <li><strong>BFS Domain:</strong> Deep knowledge validating complex payment workflows and compliance rules</li>
+              <li><strong>Process Improvement:</strong> Reduced regression cycles by <strong class="text-blue">20%</strong> through optimised test case design</li>
+              <li><strong>Zero-Defect Delivery:</strong> Supported multiple client go-lives with strong production stability</li>
+              <li><strong>Leadership:</strong> Acted as senior QA lead, mentoring testers and running knowledge-sharing sessions</li>
+              <li><strong>Client Delivery:</strong> Coordinated with developers, BAs, and product owners for smooth release readiness</li>
+            </ul>
+          </div>
+          <div class="tl-chips">
+            <span>SQL</span><span>Jira</span><span>HP Quality Centre</span>
+            <span>Data Navigator</span><span>Digital Banking</span><span>BFS Domain</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="sec-label">/ 07 &nbsp; Testimonials</div>
+    <h2 class="sec-h2">What Colleagues <span class="text-grad">Say</span></h2>
+    <p class="sec-sub">Feedback from managers, peers, and team members across Fiserv &amp; FIS Global</p>
+
+    <div class="tslider-wrap">
+      <div class="tslider" id="tslider">
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"When Manoj introduced AI agents into our workflow, the Skip Level Agent alone saved hours of manual note-taking every week. He thinks ahead of the curve and delivers real business value that no one else on the team was even considering."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#a855f7,#f43f5e)">TL</div>
+            <div><strong>Tech Lead</strong><span>Banking Products Team — Fiserv</span></div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"Manojkumar brings a rare combination of deep QA expertise and business acumen. His ability to translate complex payment requirements into airtight test scenarios is exceptional. An indispensable Agile lead who makes every release smoother."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#6366f1,#06b6d4)">PM</div>
+            <div><strong>Project Manager</strong><span>Fiserv, Chennai — Banking Products</span></div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"The way Manoj coordinates UAT across business and tech teams is remarkable. He ensures every stakeholder is aligned, defects are triaged fast, and releases go smoothly. Our go-to lead for critical payment deliveries."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#10b981,#06b6d4)">SM</div>
+            <div><strong>Scrum Master</strong><span>Fiserv — Payments Platform</span></div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p>"Working under Manoj gave me the best Agile education I've ever had. He is patient, structured, and always pushes the team to think about quality from day one. An outstanding people leader who lifts everyone around him."</p>
+          <div class="tcard-author">
+            <div class="tca" style="background:linear-gradient(135deg,#f59e0b,#f43f5e)">QA</div>
+            <div><strong>QA Analyst</strong><span>FIS Global — BFS Domain</span></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="tctrl">
+        <button class="tcb" id="tPrev">←</button>
+        <div class="tdots" id="tdots"></div>
+        <button class="tcb" id="tNext">→</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="container">
+    <div class="sec-label">/ 08 &nbsp; Education</div>
+    <h2 class="sec-h2">Qualifications &amp; <span class="text-grad">Certifications</span></h2>
+
+    <div class="edu-layout">
+      <div class="edu-deg reveal">
+        <div class="ed-yr">2012 – 2014</div>
+        <div class="ed-ico">🎓</div>
+        <h3>M.Sc. Software Engineering</h3>
+        <p>KCET, Virudhunagar</p>
+        <p class="ed-note">Specialisation in software quality and engineering practices</p>
+      </div>
+
+      <div class="certs-grid">
+        <div class="cert-card reveal"><span class="cert-ico">🧭</span><strong>AI Agent Development</strong><span>VS Code Copilot · Applied AI Engineering</span></div>
+        <div class="cert-card reveal"><span class="cert-ico">🏅</span><strong>Certified Scrum Master (CSM)</strong><span>Scrum Alliance</span></div>
+        <div class="cert-card reveal"><span class="cert-ico">⚙️</span><strong>TOSCA — 7 Certifications</strong><span>AS1, AS2, AE1, TDS1, TDS2, TQM, TA1 · Tricentis</span></div>
+        <div class="cert-card reveal"><span class="cert-ico">📊</span><strong>NeoLoad Performance Testing</strong><span>Neotys Certified</span></div>
+      </div>
+    </div>
+
+    <div class="ach-block">
+      <div class="ach-label">/ Achievements</div>
+      <div class="ach-grid">
+        <div class="ach-item reveal"><span class="ai-arrow">→</span><p><strong>First in team</strong> to design and ship 9 production AI agents, each with a documented architecture decision, into live enterprise workflows</p></div>
+        <div class="ach-item reveal"><span class="ai-arrow">→</span><p>Architected an agentic test-automation framework that <strong>replaced Tricentis TOSCA</strong> for a major release pipeline</p></div>
+        <div class="ach-item reveal"><span class="ai-arrow">→</span><p>Reduced Playwright scripting time by <strong>40%</strong> through AI-assisted code generation</p></div>
+        <div class="ach-item reveal"><span class="ai-arrow">→</span><p>Recognised for <strong>engineering innovation</strong> across critical banking platform releases</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section s-alt" id="contact">
+  <div class="container">
+    <div class="sec-label">/ 09 &nbsp; Contact</div>
+    <h2 class="sec-h2">Let's <span class="text-grad">Connect</span></h2>
+    <p class="sec-sub">Actively seeking <strong>AI Architect</strong> roles. Open to full-time &amp; consulting.</p>
+
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <div class="ci-item"><div class="ci-ico">📞</div><div><strong>Phone</strong><a href="tel:9698162889">9698162889</a></div></div>
+        <div class="ci-item"><div class="ci-ico">✉️</div><div><strong>Email</strong><a href="mailto:mkmanojmsc@gmail.com">mkmanojmsc@gmail.com</a></div></div>
+        <div class="ci-item"><div class="ci-ico">📍</div><div><strong>Location</strong><span>Chennai, Tamil Nadu, India</span></div></div>
+        <div class="ci-item"><div class="ci-ico">💼</div><div><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/manoj-kumar-s-a-56a82492/" target="_blank" rel="noopener">linkedin.com/in/manoj-kumar-s-a-56a82492</a></div></div>
+        <div class="open-card">
+          <div class="oc-title">Open To</div>
+          <div class="oc-chips">
+            <span>AI Architect</span><span>AI Engineer</span><span>AI Tester</span>
+            <span>QA Lead</span><span>Agentic Systems Builder</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="cf-row">
+          <div class="fg"><label>Name <em>*</em></label><input type="text" id="cfName" placeholder="Jane Smith" required/><span class="ferr" id="errName"></span></div>
+          <div class="fg"><label>Email <em>*</em></label><input type="email" id="cfEmail" placeholder="jane@company.com" required/><span class="ferr" id="errEmail"></span></div>
+        </div>
+        <div class="fg"><label>Role / Opportunity <em>*</em></label><input type="text" id="cfRole" placeholder="AI Architect — Systems Design" required/><span class="ferr" id="errRole"></span></div>
+        <div class="fg"><label>Message <em>*</em></label><textarea id="cfMsg" rows="5" placeholder="Tell me about the role, team size, and stack..." required></textarea><span class="ferr" id="errMsg"></span></div>
+        <button type="submit" class="btn-neon full"><span id="cfTxt">Send Message →</span><span id="cfLd" hidden>Sending…</span></button>
+        <p class="cf-ok" id="cfOk" hidden>✅ Message received! I will respond within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="ft-logo">MK<span>.</span></div>
+    <p>© 2025 Manojkumar SA · AI Architect · QA Lead · Chennai</p>
+    <div class="ft-links">
+      <a href="mailto:mkmanojmsc@gmail.com">Email</a>
+      <a href="https://github.com/Manojkumar1792" target="_blank" rel="noopener">GitHub</a>
+      <a href="#hero">↑ Top</a>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" class="back-top" aria-label="Back to top">↑</button>
+
+<script src="script.js?v=4"></script>
+</body>
+</html>
