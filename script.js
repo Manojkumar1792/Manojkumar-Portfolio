@@ -105,12 +105,59 @@ const revObs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
 // ── Code showcase minimize/expand ────────────────────
+function expandShowcase(card) {
+  if (!card) return;
+  card.classList.remove('collapsed');
+  const btn = card.querySelector('.cs-toggle');
+  if (btn) {
+    btn.textContent = '⌄ Minimize';
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+const allShowcases = document.querySelectorAll('.code-showcase');
+// Start every showcase collapsed so opening one doesn't look like "all agents expanded".
+allShowcases.forEach(card => {
+  if ('#' + card.id === window.location.hash) {
+    expandShowcase(card); // a direct deep link should land already expanded
+    return;
+  }
+  card.classList.add('collapsed');
+  const btn = card.querySelector('.cs-toggle');
+  if (btn) {
+    btn.textContent = '⌃ Expand';
+    btn.setAttribute('aria-expanded', 'false');
+  }
+});
+
 document.querySelectorAll('.cs-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.code-showcase');
     const collapsed = card.classList.toggle('collapsed');
     btn.textContent = collapsed ? '⌃ Expand' : '⌄ Minimize';
     btn.setAttribute('aria-expanded', String(!collapsed));
+  });
+});
+
+// Clicking "View code showcase" expands only that agent's showcase, not every one.
+document.querySelectorAll('.cs-view-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const target = document.querySelector(link.getAttribute('href'));
+    expandShowcase(target);
+  });
+});
+
+// "← Back to AI Work" links collapse the showcase they leave, for a clean re-visit.
+document.querySelectorAll('.code-showcase a[href="#ai-agents"]').forEach(link => {
+  link.addEventListener('click', () => {
+    const card = link.closest('.code-showcase');
+    if (!card) return;
+    card.classList.add('collapsed');
+    const btn = card.querySelector('.cs-toggle');
+    if (btn) {
+      btn.textContent = '⌃ Expand';
+      btn.setAttribute('aria-expanded', 'false');
+    }
   });
 });
 
