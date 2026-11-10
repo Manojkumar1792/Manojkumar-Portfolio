@@ -103,7 +103,7 @@ ROLES = {
         ],
         "tools": "TOSCA, Playwright, Jira, Confluence, VersionOne, SQL, NeoLoad, HP QC, Azure DevOps, Tableau, Power BI, Visio, GitHub Copilot, GenAI/LLM, GitHub",
         "certs": [("Certified Scrum Master (CSM)", "Scrum Alliance")] + CERTS_COMMON[1:],
-        "open_to": "QA Lead, Agile Lead, AI Tester - Chennai, TN - Remote/Hybrid/Onsite",
+        "open_to": "QA Lead, Agile Lead, AI Tester - Chennai, TN - Onsite/Hybrid/Remote",
     },
     "QA_Manager": {
         "filename": "Manojkumar_SA_QA_Manager_Resume.docx",
@@ -153,7 +153,7 @@ ROLES = {
         ],
         "tools": "TOSCA, Playwright, Jira, Confluence, VersionOne, SQL, NeoLoad, HP QC, Azure DevOps, Tableau, Power BI, Visio, GitHub Copilot, GenAI/LLM, GitHub",
         "certs": CERTS_COMMON,
-        "open_to": "QA Manager, QA Lead, Agile Lead - Chennai, TN - Remote/Hybrid/Onsite",
+        "open_to": "QA Manager, QA Lead, Agile Lead - Chennai, TN - Onsite/Hybrid/Remote",
     },
     "AI_Engineer": {
         "filename": "Manojkumar_SA_AI_Engineer_Resume.docx",
@@ -204,7 +204,7 @@ ROLES = {
         ],
         "tools": "GitHub Copilot, GenAI/LLM, Playwright, React, TypeScript, Azure DevOps, TOSCA, Jira, Confluence, SQL, GitHub",
         "certs": [CERTS_COMMON[3], CERTS_COMMON[0], CERTS_COMMON[1], CERTS_COMMON[2]],
-        "open_to": "AI Engineer, AI Tester, QA Lead (Banking) - Chennai, TN - Remote/Hybrid/Onsite",
+        "open_to": "AI Engineer, AI Tester, QA Lead (Banking) - Chennai, TN - Onsite/Hybrid/Remote",
     },
     "AI_Tester": {
         "filename": "Manojkumar_SA_AI_Tester_Resume.docx",
@@ -254,7 +254,7 @@ ROLES = {
         ],
         "tools": "Playwright, TOSCA, GitHub Copilot, GenAI/LLM, Azure DevOps, Jira, Confluence, SQL, NeoLoad, HP QC, Tableau, GitHub",
         "certs": [CERTS_COMMON[1], CERTS_COMMON[3], CERTS_COMMON[0], CERTS_COMMON[2]],
-        "open_to": "AI Tester, AI Engineer, QA Lead (Banking) - Chennai, TN - Remote/Hybrid/Onsite",
+        "open_to": "AI Tester, AI Engineer, QA Lead (Banking) - Chennai, TN - Onsite/Hybrid/Remote",
     },
 }
 
