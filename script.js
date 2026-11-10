@@ -104,6 +104,16 @@ const revObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
+// ── Code showcase minimize/expand ────────────────────
+document.querySelectorAll('.cs-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.code-showcase');
+    const collapsed = card.classList.toggle('collapsed');
+    btn.textContent = collapsed ? '⌃ Expand' : '⌄ Minimize';
+    btn.setAttribute('aria-expanded', String(!collapsed));
+  });
+});
+
 // ── Testimonials slider ──────────────────────────────
 const slider   = document.getElementById('tslider');
 const dotsWrap = document.getElementById('tdots');
