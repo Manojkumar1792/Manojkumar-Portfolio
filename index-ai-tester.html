@@ -366,6 +366,28 @@
       </div>
 
     </div>
+
+    <div class="eval-block">
+      <div class="ach-label" style="margin-bottom:6px;">AI-Augmented QA Strategy</div>
+      <h3 class="bb-h" style="font-size:1.3rem;">Testing AI, Not Just With AI</h3>
+      <div class="eval-grid">
+        <div class="eval-card">
+          <span class="eval-ico">🔁</span>
+          <h4>Flaky-Test Quarantine Strategy</h4>
+          <p>Classifies a test as flaky only when it alternates pass/fail across a rolling run history — not on a single failure — so genuine regressions never get silently quarantined alongside noise.</p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🧭</span>
+          <h4>The Test-Oracle Problem</h4>
+          <p>For LLM-generated test cases, validates against independent ground truth — existing requirements and BRDs — rather than trusting the same model that generated the test, avoiding the model grading its own homework.</p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">📈</span>
+          <h4>Non-Deterministic Output Testing</h4>
+          <p>Treats LLM outputs as a distribution, not a fixed value — assertions check semantic similarity and schema validity rather than exact string matches, cutting false failures from harmless wording changes.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

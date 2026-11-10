@@ -516,6 +516,50 @@ nav.scrolled .nav-pill {
   color: #e8d9a8;
 }
 
+/* --- CODE SHOWCASE: ARCHITECTURE-LEVEL PROOF ------------------- */
+.cs-insight { margin-top: 20px; display: grid; gap: 16px; }
+.cs-decision {
+  background: linear-gradient(160deg, rgba(212,175,55,.1), rgba(212,175,55,.02));
+  border: 1px solid rgba(212,175,55,.22); border-left: 3px solid var(--primary);
+  border-radius: var(--rsm); padding: 14px 18px;
+}
+.cs-decision-label {
+  display: block; font-size: .68rem; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 6px;
+}
+.cs-decision p { font-size: .87rem; color: var(--text2); font-style: italic; line-height: 1.6; }
+.cs-stack-label {
+  display: block; font-size: .68rem; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.cs-stack { width: 100%; border-collapse: collapse; background: var(--bg); border: 1px solid var(--border); border-radius: var(--rsm); overflow: hidden; }
+.cs-stack th, .cs-stack td { padding: 9px 14px; text-align: left; font-size: .78rem; }
+.cs-stack th { color: var(--muted); font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; background: var(--card); }
+.cs-stack td { color: var(--text2); border-top: 1px solid var(--border); }
+.cs-stack td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+
+.cs-diagram {
+  margin-top: 20px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--rsm); padding: 20px;
+}
+.cs-diagram-label {
+  font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 14px;
+}
+.cs-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cs-node {
+  background: var(--card); border: 1px solid rgba(212,175,55,.26); border-radius: var(--rsm);
+  padding: 10px 14px; font-size: .78rem; font-weight: 600; color: var(--text); text-align: center;
+  line-height: 1.4;
+}
+.cs-node span { display: block; font-size: .68rem; font-weight: 500; color: var(--muted); margin-top: 2px; }
+.cs-arrow { color: var(--primary); font-size: 1rem; font-weight: 700; flex-shrink: 0; }
+.cs-fallback {
+  margin-top: 14px; font-size: .78rem; color: var(--text2); line-height: 1.6;
+  border-top: 1px dashed var(--border); padding-top: 12px;
+}
+.cs-fallback-ico { color: var(--amber); margin-right: 4px; }
+
 /* --- SKILLS --------------------------------------------------- */
 .ticker-wrap { overflow: hidden; padding: 24px 0; margin: 40px 0; position: relative; }
 .ticker-wrap::before, .ticker-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 1; pointer-events: none; }
@@ -850,6 +894,21 @@ nav.scrolled .nav-pill {
 .vc-rose   .vp-badge { background: rgba(140,58,58,.12);color: var(--rose);   border: 1px solid rgba(140,58,58,.28); }
 .vc-amber  .vp-badge { background: rgba(150,102,26,.12); color: var(--amber);  border: 1px solid rgba(150,102,26,.28); }
 
+/* -- Depth-signal blocks (Engineering Rigor / QA Strategy) -- */
+.eval-block {
+  margin-top: 48px; background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 30px 32px; box-shadow: var(--shadow);
+}
+.eval-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+.eval-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--rsm);
+  padding: 22px 20px; transition: var(--tr);
+}
+.eval-card:hover { border-color: var(--bh); box-shadow: var(--shadow-h); }
+.eval-ico { font-size: 1.7rem; display: block; margin-bottom: 10px; }
+.eval-card h4 { font-size: .96rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+.eval-card p { font-size: .82rem; color: var(--text2); line-height: 1.72; }
+
 /* -- Eligibility Matrix (grand all-roles page) -- */
 .elig-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -1023,12 +1082,16 @@ nav.scrolled .nav-pill {
   .proj-grid { grid-template-columns: 1fr 1fr; }
   .role-grid { grid-template-columns: 1fr 1fr; }
   .elig-grid { grid-template-columns: 1fr 1fr; }
+  .eval-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .vp-grid { grid-template-columns: 1fr; }
   .proj-grid { grid-template-columns: 1fr; }
   .role-grid { grid-template-columns: 1fr; }
   .elig-grid { grid-template-columns: 1fr; }
+  .eval-grid { grid-template-columns: 1fr; }
+  .cs-flow { flex-direction: column; align-items: stretch; }
+  .cs-arrow { transform: rotate(90deg); align-self: center; }
   .grand-banner { flex-direction: column; align-items: flex-start; text-align: left; }
   .tcard { min-width: 100%; }
   .back-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }

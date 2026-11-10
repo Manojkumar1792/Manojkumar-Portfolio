@@ -402,6 +402,23 @@ function extractActionItems(lines: string[]): ActionItem[] {
   return items;
 }</code></pre>
       </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Chose a deterministic heuristic extractor as the default path with LLM extraction as an optional upgrade — the agent never fully fails, even if the LLM API is down, rate-limited, or unavailable."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>LLM</td><td>GPT-4 (optional)</td><td>Higher-quality summaries when available, never required for core function</td></tr>
+              <tr><td>Orchestration</td><td>Single-pass call</td><td>Low latency — no multi-step agent loop needed for this task</td></tr>
+              <tr><td>Fallback</td><td>Regex/heuristic parser</td><td>Zero-dependency reliability baseline</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>
       </div>
@@ -456,6 +473,38 @@ const TASK_OFFSETS: TaskOffset[] = [
   // ...remaining tasks follow the same fixed-offset pattern
 ];</code></pre>
       </div>
+      <div class="cs-diagram">
+        <div class="cs-diagram-label">System Architecture</div>
+        <div class="cs-flow">
+          <div class="cs-node">Release Lock Date</div>
+          <div class="cs-arrow">→</div>
+          <div class="cs-node">RAG Calendar Lookup<span>Azure OpenAI</span></div>
+          <div class="cs-arrow">→</div>
+          <div class="cs-node">Task Offset Engine</div>
+          <div class="cs-arrow">→</div>
+          <div class="cs-node">Checklist Generator</div>
+          <div class="cs-arrow">→</div>
+          <div class="cs-node">SMTP Reminder Service</div>
+        </div>
+        <div class="cs-fallback"><span class="cs-fallback-ico">⚠</span>Failure handling: if the RAG lookup times out or returns a low-confidence match, the agent falls back to a static offset table — checklist generation is never blocked on an LLM call.</div>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Chose RAG over fine-tuning for the release-calendar lookup — the calendar changes every release cycle, so grounding answers in a live document beats retraining a model on dates that go stale in weeks."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>LLM</td><td>Azure OpenAI (GPT-4)</td><td>Enterprise compliance and data-residency requirements</td></tr>
+              <tr><td>Retrieval</td><td>RAG over release calendar</td><td>Keeps answers current without retraining a model</td></tr>
+              <tr><td>Scheduling</td><td>Fixed day-offsets from lock date</td><td>Deterministic, auditable dates — zero hallucination risk on the dates themselves</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>
       </div>
@@ -502,6 +551,23 @@ function scoreFor(entry: Submission): number {
   return WEIGHTS[entry.type] ?? 0;
 }</code></pre>
       </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Chose GitLab-API-backed storage over a dedicated database — avoids standing up and maintaining backend infrastructure for an internal engagement tool with a few hundred users."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Persistence</td><td>GitLab API (JSON)</td><td>Zero infra, version-controlled, fully auditable</td></tr>
+              <tr><td>Frontend</td><td>Static SPA</td><td>No server to patch or scale for an internal tool</td></tr>
+              <tr><td>Auth</td><td>Role-based client gating</td><td>Low-stakes internal tool — full SSO integration not required</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>
       </div>
@@ -542,6 +608,22 @@ export function validateProductSelection(selection: ProductChoice): ValidationRe
   const errors = REQUIRED_FIELDS.filter(field => !selection[field]);
   return errors.length ? { ok: false, errors } : { ok: true, errors: [] };
 }</code></pre>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Chose a step-resolver pattern — a pure function of profile state — over a stateful workflow engine. It keeps onboarding logic testable and makes resuming an interrupted session trivial."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Flow control</td><td>Pure resolver function</td><td>Idempotent — every path is easy to unit test in isolation</td></tr>
+              <tr><td>Validation</td><td>Field-level rules engine</td><td>Clear, localized error messages for compliance review</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>
@@ -588,6 +670,23 @@ function groupByResource(endpoints: ApiEndpoint[]): Record&lt;string, string[]&g
   ...
 }</code></pre>
       </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Chose static analysis of API contracts over running the backend at generation time — keeps the agent safe to run against any codebase without ever executing untrusted code."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Input</td><td>OpenAPI / route introspection</td><td>No code execution required — safer and faster than sandboxing</td></tr>
+              <tr><td>Output</td><td>React + TypeScript</td><td>Matches the target team's stack, type-safe by default</td></tr>
+              <tr><td>Codegen strategy</td><td>Template + AST merge</td><td>Regeneration never clobbers manual customizations</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>
       </div>
@@ -633,6 +732,22 @@ export function summarizeFailures(results: TestRunResult[]): FailureReport[] {
     .map(r => ({ id: r.id, reason: classifyFailure(r) }));   // groups by root-cause pattern
 }</code></pre>
       </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Chose to decouple test selection from execution — the same orchestrator runs ad-hoc UI-selected tests or scheduled CI batches without duplicating logic in two places."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Execution</td><td>Async queue per test ID</td><td>Parallelizable and resumable on failure</td></tr>
+              <tr><td>Reporting</td><td>Failure classification by pattern</td><td>Groups noise into actionable root causes instead of a flat list</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>
       </div>
@@ -671,6 +786,22 @@ export function summarizeFailures(results: TestRunResult[]): FailureReport[] {
 export function classifyGate(suite: SuiteResult): 'pass' | 'block' {
   return suite.criticalFailures === 0 ? 'pass' : 'block';
 }</code></pre>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Chose a rolling 5-run history for flake detection over a single pass/fail flag — a test that alternates outcomes is a different risk than one that fails consistently, and only the former should be quarantined."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Flake detection</td><td>Outcome-flip counting (last 5 runs)</td><td>Cheap, explainable, no ML model required</td></tr>
+              <tr><td>CI gate</td><td>Blocks only on critical-suite failures</td><td>Protects release quality without stalling velocity</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>
@@ -711,6 +842,22 @@ function weightedTotal(score: JudgeScore): number {
   return Object.entries(score.criteria)
     .reduce((sum, [key, value]) => sum + value * CRITERIA_WEIGHTS[key], 0);
 }</code></pre>
+      </div>
+      <div class="cs-insight">
+        <div class="cs-decision">
+          <span class="cs-decision-label">Design Decision</span>
+          <p>"Required 6 independent judge scores before finalizing a result, with no single judge able to seal a score — removes single-point bias in a live competition."</p>
+        </div>
+        <div>
+          <span class="cs-stack-label">Tech Stack &amp; Trade-offs</span>
+          <table class="cs-stack">
+            <thead><tr><th>Component</th><th>Choice</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td>Persistence</td><td>Git-versioned JSON</td><td>Fully auditable scoring history — no database needed for a 15-team event</td></tr>
+              <tr><td>Hosting</td><td>GitLab Pages (serverless)</td><td>Zero ops for a one-off event; judge-PIN auth is sufficient</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <p class="ed-note" style="margin-top:10px;">Want the full repo, README, and test suite? Ask via the <a href="#contact">Contact</a> section.</p>
       <p style="margin-top:14px;"><a href="#ai-agents" class="btn-outline">← Back to AI Work</a></p>

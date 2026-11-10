@@ -366,6 +366,28 @@
       </div>
 
     </div>
+
+    <div class="eval-block">
+      <div class="ach-label" style="margin-bottom:6px;">Engineering Rigor</div>
+      <h3 class="bb-h" style="font-size:1.3rem;">How I Validate AI Output — Not Just Ship It</h3>
+      <div class="eval-grid">
+        <div class="eval-card">
+          <span class="eval-ico">🧪</span>
+          <h4>Prompt Regression Testing</h4>
+          <p>Every prompt change runs against a fixed golden-output test set before deploying — catches silent quality regressions the same way unit tests catch code regressions.</p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">🛡️</span>
+          <h4>Guardrails &amp; Hallucination Handling</h4>
+          <p>Structured output schemas plus a validation layer reject malformed or out-of-scope LLM responses before they reach a user, falling back to deterministic logic when confidence is low.</p>
+        </div>
+        <div class="eval-card">
+          <span class="eval-ico">📊</span>
+          <h4>Latency &amp; Cost Observability</h4>
+          <p>Tracks per-call latency, token usage, and cost against a budget per agent — flags prompts that regress on speed or spend before they ever reach production.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
