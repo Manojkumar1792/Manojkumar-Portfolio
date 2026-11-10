@@ -487,10 +487,11 @@ nav.scrolled .nav-pill {
   border-radius: var(--r); padding: 30px 32px; box-shadow: var(--shadow);
 }
 .cs-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 4px; }
-.cs-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cs-head > div:first-child { flex: 1 1 320px; min-width: 0; }
+.cs-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
 .cs-toggle {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 6px 14px; border-radius: 100px; margin-left: 4px;
+  display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0;
+  padding: 6px 14px; border-radius: 100px;
   background: var(--card); color: var(--text2); font-size: .74rem; font-weight: 700;
   border: 1px solid var(--border); cursor: pointer; transition: var(--tr);
 }
