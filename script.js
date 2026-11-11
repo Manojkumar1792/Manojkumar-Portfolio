@@ -16,34 +16,32 @@ window.addEventListener('scroll', () => {
 
 backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// ── Background music toggle ──────────────────────────
-const musicToggle = document.getElementById('musicToggle');
-const bgMusic = document.getElementById('bgMusic');
-if (musicToggle && bgMusic) {
-  bgMusic.volume = 0.25;
-  const musicIco = musicToggle.querySelector('.music-ico');
+// ── Voice intro toggle (plays once, then returns to muted) ──
+const introToggle = document.getElementById('introToggle');
+const introAudio = document.getElementById('introAudio');
+if (introToggle && introAudio) {
+  introAudio.volume = 0.9;
+  const introIco = introToggle.querySelector('.music-ico');
 
-  function setMusicState(playing) {
-    musicToggle.classList.toggle('playing', playing);
-    musicToggle.setAttribute('aria-pressed', String(playing));
-    if (musicIco) musicIco.textContent = playing ? '🔊' : '🎵';
-    localStorage.setItem('bgMusicPlaying', String(playing));
+  function setIntroState(playing) {
+    introToggle.classList.toggle('playing', playing);
+    introToggle.setAttribute('aria-pressed', String(playing));
+    if (introIco) introIco.textContent = playing ? '🔊' : '🔈';
   }
 
-  musicToggle.addEventListener('click', () => {
-    if (bgMusic.paused) {
-      bgMusic.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
+  introToggle.addEventListener('click', () => {
+    if (introAudio.paused) {
+      introAudio.currentTime = 0;
+      introAudio.play().then(() => setIntroState(true)).catch(() => setIntroState(false));
     } else {
-      bgMusic.pause();
-      setMusicState(false);
+      introAudio.pause();
+      introAudio.currentTime = 0;
+      setIntroState(false);
     }
   });
 
-  // Resume automatically only if the visitor had music on earlier in this browser —
-  // browsers still require a prior user gesture, so this quietly no-ops if blocked.
-  if (localStorage.getItem('bgMusicPlaying') === 'true') {
-    bgMusic.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
-  }
+  // Once the one-time intro finishes, drop back to muted automatically — never loops.
+  introAudio.addEventListener('ended', () => setIntroState(false));
 }
 
 // ── Cursor glow ─────────────────────────────────────
